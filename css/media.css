@@ -1,0 +1,217 @@
+/* --------media query------- */
+
+/* -------tab view-------- */
+@media all and (max-width: 768px) {
+  /* -------navigation-------- */
+  header .navigation {
+    max-width: 90%;
+  }
+  header .navigation .nav {
+    display: none;
+  }
+  .navigation .icons {
+    justify-content: end;
+  }
+  .icons .fa-heart,
+  .icons .fa-cart-shopping {
+    display: none;
+  }
+  .navigation .icons #count {
+    display: none;
+  }
+  .icons .fa-bars {
+    display: block;
+  }
+
+  /* ---------collection-------- */
+  .collection-page .collection-card .collection-types {
+    width: 95%;
+  }
+  .collection-types .types {
+    text-align: center;
+  }
+  .collection-types .types img{
+    height: 50%;
+  width: 80%;
+  }
+
+  /* ----------product---------- */
+  .product-page .products-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+   /* -------brand-------- */
+  .brands .brands-box {
+    width: 90%;
+  }
+  .brands .brands-box img {
+    height: 80px;
+    width: 80px;
+  }
+
+  /* --------about--------- */
+  .about-page .about-content {
+    width: 95%;
+  }
+  .about-page .about-content .about-para {
+    height: auto;
+    width: 50%;
+    gap: 10px;
+  }
+
+  /* -------service-------- */
+  .service-page .service-content {
+    width: 95%;
+  }
+  .service-content .service-card {
+    height: 300px;
+    width: 32%;
+  }
+  .service-content .service-card .service-heading {
+    font-size: 1rem;
+  }
+  /* -------contact-------- */
+  .contact-page .contact-content {
+    width: 90%;
+  }
+  .contact-page .contact-content .contact-us {
+    width: 55%;
+  }
+  .contact-page .contact-content .contact-us form {
+    gap: 10px;
+  }
+  .contact-content .contact-us form .upper-box {
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+  }
+  .contact-us form .upper-box input {
+    width: 320px;
+  }
+}
+
+/* -------mobile view-------- */
+@media all and (max-width: 576px) {
+  /* -------navigation------ */
+  header .navigation .logo {
+    justify-content: left;
+  }
+  .navigation .logo .brand {
+    font-size: 1.6rem;
+  }
+  .icons .fa-bars {
+    font-size: 1.6rem;
+  }
+  .bar-nav {
+    height: 180px;
+    width: 150px;
+    top: 65px;
+  }
+  .bar-nav ul li {
+    font-size: 0.9rem;
+  }
+
+  /* -----home-content------- */
+  .home-content .content {
+    width: 300px;
+    height: 300px;
+    margin-left: 10px;
+  }
+  .home-content .content .content-title {
+    font-size: 1.8rem;
+    width: 340px;
+  }
+  .home-content .content .content-para {
+    width: 300px;
+  }
+
+  /* ----------collection page---------- */
+  .collection-page .collection-card {
+    height: auto;
+  }
+  .collection-page .collection-card .collection-types {
+    flex-direction: column;
+    height: auto;
+  }
+  .collection-types .types {
+    height: 250px;
+    gap: 10px;
+  }
+  .collection-types .types img{
+    height: 70%;
+  width: 90%;
+  }
+
+ /* ----------product---------- */
+  .product-page .products-grid{
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+   /* ----------brands---------- */
+  .brands .brands-box {
+    flex-direction: column;
+    height: auto;
+    gap: 40px;
+  }
+  .brands .brands-box img {
+    width: 180px;
+    height: 80px;
+  }
+  /* ---------about--------- */
+  .about-page .about-content {
+    height: 700px;
+    flex-direction: column;
+  }
+  .about-page .about-content .about-para {
+    height: auto;
+    width: 100%;
+  }
+  .about-page .about-content .about-para .about {
+    font-size: 0.9rem;
+  }
+  .about-page .about-content .about-img {
+    height: 45%;
+    width: 80%;
+  }
+
+  /* ----------service---------- */
+  .service-page .service-content {
+    flex-direction: column;
+    height: auto;
+    gap: 20px;
+  }
+  .service-content .service-card {
+    height: auto;
+    width: 90%;
+  }
+  /* ----------contact---------- */
+  .contact-page {
+    gap: 20px;
+  }
+  .contact-page .contact-content {
+    flex-direction: column;
+    height: 700px;
+    gap: 20px;
+  }
+  .contact-page .contact-content .contact-map {
+    width: 90%;
+  }
+  .contact-page .contact-content .contact-us {
+    width: 95%;
+  }
+
+  .contact-content .contact-us form .upper-box {
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+  }
+  .contact-us form .upper-box input {
+    width: 240px;
+  }
+
+  /* ------footer------ */
+  footer .upper-footer {
+    padding: 20px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

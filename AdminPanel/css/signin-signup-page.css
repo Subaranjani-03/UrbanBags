@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.wrapper {
+  /* border: 1px solid; */
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  background: url(../img/5_asfasw112.jpg);
+  background-size: cover;
+}
+.wrapper .form-box{
+  /* border: 1px solid red; */
+  height: auto;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  padding-bottom: 20px;
+  background-color: rgb(255, 255, 255);
+}
+.wrapper .form-box form {
+  /* border: 1px solid red; */
+  width: auto;
+  /* padding: 20px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+}
+.wrapper .form-box form .form-card{
+  /* border: 2px solid blue; */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.wrapper .form-box form .form-card .form-input {
+  /* border: 1px solid green; */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.wrapper .form-box form .form-input label {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.wrapper .form-box form .form-input input {
+  padding: 8px;
+  width: 350px;
+  font-weight: 500;
+}
+
+.wrapper .form-box button {
+  padding: 12px;
+  width: 350px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 10px;
+  color: white;
+  border: none;
+  background: linear-gradient(to top left, #1e003c,#b13784,#500772);
+}
+.wrapper .form-box button:hover{
+  background: linear-gradient(to bottom right, #1e003c,#b13784,#500772);
+}
+/* .wrapper .form-box button a{
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+} */
+
+.form-input .Error{
+  color: red;
+  font-size: .8rem;
+}
+.form-box .form-link{
+  font-size: .9rem;
+}
+/* .form-box .form-link a{
+  text-decoration: none;
+} */
+
+/* signup */
+.wrapper .form-box .form-new{
+  padding: 15px;
+}
+.wrapper .form-box form .form-card-signup{
+  /* border: 2px solid blue; */
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.wrapper .form-box form .form-card-signup .form-input {
+  /* border: 2px solid green; */
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: relative;
+}
+.wrapper .form-box form .form-card-signup .form-input .password-box{
+  /* border: 2px solid green; */
+  position: relative;
+}
+.wrapper .form-box form .form-card-signup .form-input .password-box #password,
+.wrapper .form-box form .form-card-signup .form-input .password-box #cnfrmpass{
+  padding-right: 40px;
+}
+
+.wrapper .form-box form .form-card-signup .form-input .fa-lock {
+  position: absolute;
+  right: 10px;
+  bottom: 11px;
+}
+
+/* signin */
+.wrapper .signin-box{
+  /* border: 3px solid green; */
+  padding: 35px;
+  gap: 20px;
+}
+.wrapper .signin-box .signin-form-new{
+  margin-bottom: 10px;
+}
+.wrapper .form-box form .card-signin{
+  /* border: 2px solid; */
+  gap: 15px;
+}
+.wrapper .form-box form .card-signin .form-text-box{
+  /* border: 1px solid red; */
+  gap: 10px;
+}
+.wrapper .form-box form .card-signin .form-text-box .password-box{
+  /* border: 2px solid green; */
+  position: relative;
+}
+.wrapper .form-box form .card-signin .form-text-box .password-box #password{
+  padding-right: 40px;
+}
+
+.wrapper .form-box form .card-signin .form-text-box .fa-lock {
+  position: absolute;
+  right: 10px;
+  bottom: 11px;
+}

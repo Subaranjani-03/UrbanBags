@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup Page</title>
+    <link rel="stylesheet" href="../AdminPanel/css/signin-signup-page.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="form-box">
+        <form action="" class="form-new">
+          <h2>Signup</h2>
+          <div class="form-card-signup">
+            <div class="form-input">
+              <label for="uname">Name</label>
+              <input type="text" placeholder="e.g. subaranjani" id="uname" />
+              <span id="unameErr" class="Error"></span>
+            </div>
+
+            <div class="form-input">
+              <label for="email">E-mail</label>
+              <input type="email" placeholder="e.g. abc@gmail.com" id="email" />
+              <span id="emailErr" class="Error"></span>
+            </div>
+
+            <div class="form-input">
+              <label for="phnum">Phone</label>
+              <input type="number" placeholder="e.g. 93XXXXXX85" id="phnum" />
+              <span id="phnumErr" class="Error"></span>
+            </div>
+
+            <div class="form-input">
+              <label for="password">Password</label>
+              <div class="password-box">
+                <input type="password" placeholder="Password" id="password" />
+                <i class="fa-solid fa-lock"></i>
+              </div>
+              <span id="passwordErr" class="Error"></span>
+            </div>
+
+            <div class="form-input">
+              <label for="confirm-password">Confirm Password</label>
+              <div class="password-box">
+                <input
+                  type="password"
+                  placeholder="Confirm Password"
+                  id="cnfrmpass"
+                />
+                <i class="fa-solid fa-lock"></i>
+              </div>
+              <span id="cnfrmpassErr" class="Error"></span>
+            </div>
+          </div>
+          <button type="submit" >Register</button>
+          <p class="form-link">
+            Already Have An Account? <a href="../index.html">Signin</a>
+          </p>
+        </form>
+
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../AdminPanel/script/signup.js"></script>
+  </body>
+</html>

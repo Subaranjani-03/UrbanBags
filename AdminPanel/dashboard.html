@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel | Dashboard</title>
+    <link rel="stylesheet" href="../AdminPanel/css/style.css" />
+    <link rel="stylesheet" href="../AdminPanel/css/mediaquery.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="header-left">
+          <i class="fa-solid fa-bars" id="menuToggle"></i>
+        </div>
+        <div class="header-right">
+          <div class="header-timer">
+            <span id="hr">00 :</span> <span id="min">00 :</span> <span id="sec">00</span> <span id="ampm">AM</span>
+          </div>
+          <a href="../AdminPanel/admin-login.html"><i class="fa-solid fa-user"></i></a>
+          <!-- <i class="fa-solid fa-magnifying-glass"></i>
+          <i class="fa-solid fa-bell"></i>
+          <span class="notify1">5</span>
+          <i class="fa-solid fa-comments"></i>
+          <span class="notify2">2</span>
+          <i class="fa-solid fa-maximize"></i> -->
+        </div>
+      </header>
+
+      <aside>
+        <div class="profile">
+          <div class="profile-pic">
+            <img src="../AdminPanel/img/user (2).png" alt="" />
+          </div>
+          <h2 class="profile-name">Admin</h2>
+        </div>
+        <div class="nav-links">
+          <div class="nav-sub">
+            <i class="fa-solid fa-house"></i>
+            <a href="../AdminPanel/dashboard.html" class="nav-sub-name">Dashboard</a>
+          </div>
+          <div class="nav-sub">
+            <i class="fa-solid fa-list"></i>
+            <a href="../AdminPanel/category.html" class="nav-sub-name">Category</a>
+          </div>
+          <div class="nav-sub">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <a href="../AdminPanel/product.html" class="nav-sub-name">Products</a>
+          </div>
+
+          <div class="nav-sub">
+            <i class="fa-regular fa-address-card"></i>
+            <a href="../AdminPanel/registration.html" class="nav-sub-name">Customers</a>
+          </div>
+
+          <div class="nav-sub">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <a href="#" class="nav-sub-name" onclick="logOut()">Logout</a>
+          </div>
+        </div>
+        <div class="profile-icons">
+          <a href="https://www.whatsapp.com/" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://x.com/" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </aside>
+
+      <main>
+        <h2 class="main-dash">Dashboard</h2>
+        <div class="main-card">
+
+          <div class="main-sub-card sub-card1">
+            <div class="dash-card-top">
+              <div class="dash-card1 dash-card">
+                <p class="dash-card-title">Products</p>
+                <h2 class="dash-card-amt">0</h2>
+              </div>
+              <div class="dash-card2">
+                <i class="fa-solid fa-arrow-up-wide-short"></i>
+              </div>
+            </div>
+            <div class="dash-card3">
+              <a href="../AdminPanel/product.html" class="view-detail">
+                View Details <i class="fa-solid fa-circle-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="main-sub-card sub-card2">
+            <div class="dash-card-top">
+              <div class="dash-card1 dash-card">
+                <p class="dash-card-title">Category</p>
+                <h2 class="dash-card-amt">0</h2>
+              </div>
+              <div class="dash-card2">
+                <i class="fa-solid fa-bag-shopping"></i>
+              </div>
+            </div>
+            <div class="dash-card3">
+              <a href="../AdminPanel/category.html" class="view-detail">
+                View Details <i class="fa-solid fa-circle-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="main-sub-card sub-card3">
+            <div class="dash-card-top">
+              <div class="dash-card1 dash-card">
+                <p class="dash-card-title">Customers</p>
+                <h2 class="dash-card-amt">0</h2>
+              </div>
+              <div class="dash-card2">
+                <i class="fa-solid fa-users"></i>
+              </div>
+            </div>
+            <div class="dash-card3">
+              <a href="../AdminPanel/registration.html" class="view-detail">
+                View Details <i class="fa-solid fa-circle-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="main-sub-card sub-card4">
+            <div class="dash-card-top">
+              <div class="dash-card1 dash-card">
+                <p class="dash-card-title">Stock</p>
+                <h2 class="dash-card-amt">0</h2>
+              </div>
+              <div class="dash-card2">
+                <i class="fa-solid fa-chart-simple"></i>
+              </div>
+            </div>
+            <div class="dash-card3">
+              <a href="../AdminPanel/product.html" class="view-detail">
+                View Details <i class="fa-solid fa-circle-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <p>
+          © 2026 <span class="cpy-right">Admin Panel</span>. All rights
+          reserved.
+        </p>
+      </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../AdminPanel/script/logout.js"></script>
+    <script src="../AdminPanel/script/timer.js"></script>
+    <script src="../AdminPanel/script/toggle.js"></script>
+    <script src="../AdminPanel/script/count.js"></script>
+  </body>
+</html>

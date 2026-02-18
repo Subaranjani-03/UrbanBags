@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UrbanBags | Shop</title>
+    <link rel="icon" href="./image/icon2.png" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/media.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!--------- navigation --------->
+    <header>
+      <div class="navigation">
+        <div class="logo">
+          <img src="./image/icon2.png" alt="img" />
+          <a href="/" class="brand">UrbanBags</a>
+        </div>
+        <div class="nav">
+          <ul>
+            <li><a href="./home.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./shop.html">Shop</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="icons">
+            <i class="fa-solid fa-bars" onclick="btnClick()"></i>
+            <a href="./index.html"><i class="fa-solid fa-user"></i></a>
+            <a href="./wishlist.html"><i class="fa-solid fa-heart"></i></a>
+            <a href="./cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+            <!-- <a href=""><i class="fa-solid fa-right-from-bracket"></i></a> -->
+            <span id="count">0</span>
+          </div>
+      </div>
+      <!-- navigation bar for media query -->
+      <div class="bar-nav">
+        <ul>
+          <li>
+            <i class="fa-solid fa-house"></i> <a href="./home.html">Home</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-circle-info"></i>
+            <a href="./about.html">About</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-shop"></i> <a href="./shop.html">Shop</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-phone"></i>
+            <a href="./contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <!--------- product ---------->
+
+    <section class="product-page product-hyper">
+      <h2 class="section-title">Featured Products</h2>
+
+      <div class="products-grid">
+        <!-- Card 1 -->
+        <div class="product-card">
+          <span class="offer-badge">20% OFF</span>
+
+          <div class="upper-cart">
+            <a href="./wishlist.html"><i class="fa-solid fa-heart wishlist"></i></a>
+            <i class="fa-solid fa-share-nodes share"></i>
+          </div>
+
+          <div class="product-img">
+            <img src="./image/ac1.jpg" alt="Urban Travel Backpack" />
+          </div>
+          <h3 class="product-name">Urban Travel Backpack</h3>
+          <p class="product-category">Travel Bags</p>
+          <div class="price-box">
+            <p class="product-price">₹2,399</p>
+            <p class="product-strike">₹2,999</p>
+          </div>
+          <button class="add-cart">
+            <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+          </button>
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <span class="rating-value">4.5</span>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="product-card">
+          <span class="offer-badge">10% OFF</span>
+          <div class="upper-cart">
+            <a href="./wishlist.html"><i class="fa-solid fa-heart wishlist"></i></a>
+            <i class="fa-solid fa-share-nodes share"></i>
+          </div>
+          <div class="product-img">
+            <img src="./image/ac2.jpg" alt="Campus Pro Backpack" />
+          </div>
+          <h3 class="product-name">Campus Pro Backpack</h3>
+          <p class="product-category">School Bags</p>
+          <div class="price-box">
+            <p class="product-price">₹1,499</p>
+            <p class="product-strike">₹1,699</p>
+          </div>
+          <button class="add-cart">
+            <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+          </button>
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <span class="rating-value">4</span>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="product-card">
+          <span class="offer-badge">15% OFF</span>
+          <div class="upper-cart">
+            <a href="./wishlist.html"><i class="fa-solid fa-heart wishlist"></i></a>
+            <i class="fa-solid fa-share-nodes share"></i>
+          </div>
+          <div class="product-img">
+            <img src="./image/ac13.jpg" alt="Elegant Leather Handbag" />
+          </div>
+          <h3 class="product-name">Elegant Leather Handbag</h3>
+          <p class="product-category">Fashion Bags</p>
+          <div class="price-box">
+            <p class="product-price">₹2,199</p>
+            <p class="product-strike">₹2,599</p>
+          </div>
+          <button class="add-cart">
+            <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+          </button>
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <span class="rating-value">5</span>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="product-card">
+          <span class="offer-badge">25% OFF</span>
+          <div class="upper-cart">
+            <a href="./wishlist.html"><i class="fa-solid fa-heart wishlist"></i></a>
+            <i class="fa-solid fa-share-nodes share"></i>
+          </div>
+          <div class="product-img">
+            <img
+              src="./image/ac4.jpg"
+              alt="Executive Laptop Messenger Bag"
+            />
+          </div>
+          <h3 class="product-name">Executive Laptop Messenger Bag</h3>
+          <p class="product-category">Office Bags</p>
+          <div class="price-box">
+            <p class="product-price">₹2,999</p>
+            <p class="product-strike">₹3,999</p>
+          </div>
+          <button class="add-cart">
+            <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+          </button>
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <span class="rating-value">4.5</span>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="product-card">
+          <span class="offer-badge">20% OFF</span>
+          <div class="upper-cart">
+            <a href="./wishlist.html"><i class="fa-solid fa-heart wishlist"></i></a>
+            <i class="fa-solid fa-share-nodes share"></i>
+          </div>
+          <div class="product-img">
+            <img src="./image/ac5.jpg" alt="Trekking Adventure Rucksack" />
+          </div>
+          <h3 class="product-name">Trekking Adventure Rucksack</h3>
+          <p class="product-category">Hiking Bags</p>
+          <div class="price-box">
+            <p class="product-price">₹3,199</p>
+            <p class="product-strike">₹3,999</p>
+          </div>
+          <button class="add-cart">
+            <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+          </button>
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <span class="rating-value">5</span>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="product-card">
+          <span class="offer-badge">10% OFF</span>
+          <div class="upper-cart">
+            <a href="./wishlist.html"><i class="fa-solid fa-heart wishlist"></i></a>
+            <i class="fa-solid fa-share-nodes share"></i>
+          </div>
+          <div class="product-img">
+            <img src="./image/ac6.jpg" alt="Casual Daypack" />
+          </div>
+          <h3 class="product-name">Casual Daypack</h3>
+          <p class="product-category">College Bags</p>
+          <div class="price-box">
+            <p class="product-price">₹1,299</p>
+            <p class="product-strike">₹1,499</p>
+          </div>
+          <button class="add-cart">
+            <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+          </button>
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <span class="rating-value">4.5</span>
+          </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="product-card">
+          <span class="offer-badge">15% OFF</span>
+          <div class="upper-cart">
+            <a href="./wishlist.html"><i class="fa-solid fa-heart wishlist"></i></a>
+            <i class="fa-solid fa-share-nodes share"></i>
+          </div>
+          <div class="product-img">
+            <img src="./image/ac10.jpg" alt="Premium Tote Bag" />
+          </div>
+          <h3 class="product-name">Premium Tote Bag</h3>
+          <p class="product-category">Women Fashion</p>
+          <div class="price-box">
+            <p class="product-price">₹1,899</p>
+            <p class="product-strike">₹2,199</p>
+          </div>
+          <button class="add-cart">
+            <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+          </button>
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <span class="rating-value">4</span>
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="product-card">
+          <span class="offer-badge">25% OFF</span>
+          <div class="upper-cart">
+            <a href="./wishlist.html"><i class="fa-solid fa-heart wishlist"></i></a>
+            <i class="fa-solid fa-share-nodes share"></i>
+          </div>
+          <div class="product-img">
+            <img src="./image/ac7.jpg" alt="Slim Office Laptop Bag" />
+          </div>
+          <h3 class="product-name">Slim Office Laptop Bag</h3>
+          <p class="product-category">Work Bags</p>
+          <div class="price-box">
+            <p class="product-price">₹2,499</p>
+            <p class="product-strike">₹3,299</p>
+          </div>
+          <button class="add-cart">
+            <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+          </button>
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <span class="rating-value">5</span>
+          </div>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="product-card">
+          <span class="offer-badge">20% OFF</span>
+          <div class="upper-cart">
+            <a href="./wishlist.html"><i class="fa-solid fa-heart wishlist"></i></a>
+            <i class="fa-solid fa-share-nodes share"></i>
+          </div>
+          <div class="product-img">
+            <img src="./image/ac8.jpg" alt="Waterproof Travel Duffel" />
+          </div>
+          <h3 class="product-name">Waterproof Travel Duffel</h3>
+          <p class="product-category">Travel Bags</p>
+          <div class="price-box">
+            <p class="product-price">₹2,799</p>
+            <p class="product-strike">₹3,499</p>
+          </div>
+          <button class="add-cart">
+            <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+          </button>
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <span class="rating-value">4.5</span>
+          </div>
+        </div>
+
+        <!-- Card 10 -->
+        <div class="product-card">
+          <span class="offer-badge">10% OFF</span>
+          <div class="upper-cart">
+            <a href="./wishlist.html"><i class="fa-solid fa-heart wishlist"></i></a>
+            <i class="fa-solid fa-share-nodes share"></i>
+          </div>
+          <div class="product-img">
+            <img src="./image/ac9.jpg" alt="Student Classic Backpack" />
+          </div>
+          <h3 class="product-name">Student Classic Backpack</h3>
+          <p class="product-category">School Bags</p>
+          <div class="price-box">
+            <p class="product-price">₹1,199</p>
+            <p class="product-strike">₹1,499</p>
+          </div>
+          <button class="add-cart">
+            <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+          </button>
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <span class="rating-value">4</span>
+          </div>
+        </div>
+
+        <!-- Card 11 -->
+        <div class="product-card">
+          <span class="offer-badge">15% OFF</span>
+          <div class="upper-cart">
+            <a href="./wishlist.html"><i class="fa-solid fa-heart wishlist"></i></a>
+            <i class="fa-solid fa-share-nodes share"></i>
+          </div>
+          <div class="product-img">
+            <img src="./image/ac11.jpg" alt="Designer Party Clutch" />
+          </div>
+          <h3 class="product-name">Designer Casual Clutch</h3>
+          <p class="product-category">Fashion Accessories</p>
+          <div class="price-box">
+            <p class="product-price">₹1,599</p>
+            <p class="product-strike">₹1,999</p>
+          </div>
+          <button class="add-cart">
+            <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+          </button>
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <span class="rating-value">4.5</span>
+          </div>
+        </div>
+
+        <!-- Card 12 -->
+        <div class="product-card">
+          <span class="offer-badge">25% OFF</span>
+          <div class="upper-cart">
+            <a href="./wishlist.html"><i class="fa-solid fa-heart wishlist"></i></a>
+            <i class="fa-solid fa-share-nodes share"></i>
+          </div>
+          <div class="product-img">
+            <img src="./image/ac12.jpg" alt="Corporate Leather Briefcase" />
+          </div>
+          <h3 class="product-name">Corporate Leather Briefcase</h3>
+          <p class="product-category">Office Bags</p>
+          <div class="price-box">
+            <p class="product-price">₹3,499</p>
+            <p class="product-strike">₹4,499</p>
+          </div>
+          <button class="add-cart">
+            <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+          </button>
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <span class="rating-value">5</span>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!------- footer ------->
+    <footer>
+      <div class="upper-footer">
+        <div class="footer-brand">
+          <h4 class="footer-title">UrbanBags</h4>
+          <p class="footer-text">
+            Quality, stylish, and durable products designed for everyday use.
+            Built with care and precision for modern lifestyles.
+          </p>
+        </div>
+
+        <div class="footer-quicks">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul>
+            <li><a href="./home.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./shop.html">Shop</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-service">
+          <h2 class="footer-title">Follow Us</h2>
+          <p class="footer-text">
+            Stay connected with UrbanBags on social media for new arrivals,
+            offers, and updates. Follow us and be part of our growing community.
+          </p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/" target="_blank">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="https://www.facebook.com/" target="_blank">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+
+            <a href="https://twitter.com/" target="_blank">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+
+            <a href="https://wa.me/919876543210" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-support">
+          <h4 class="footer-title">Support</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="./contact.html"> Email: support@UrbanBags.com</a></li>
+            <li>Phone: +91 9876543210</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-text">
+          © 2026 <a href="" class="rights">UrbanBags</a>. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/inc.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+</html>

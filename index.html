@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signin Page</title>
+    <link rel="stylesheet" href="./AdminPanel/css/signin-signup-page.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="form-box signin-box">
+        <form action="" class="signin-form-new">
+          <h2>Signin</h2>
+          <div class="form-card-signup card-signin">
+            <div class="form-input form-text-box">
+              <label for="email">E-mail</label>
+              <input type="email" placeholder="e.g. abc@gmail.com" id="email" />
+              <span id="emailErr" class="Error"></span>
+            </div>
+
+            <div class="form-input form-text-box">
+              <label for="password">Password</label>
+              <div class="password-box">
+                <input type="password" placeholder="Password" id="password" />
+                <i class="fa-solid fa-lock"></i>
+              </div>
+              <span id="passwordErr" class="Error"></span>
+            </div>
+          </div>
+          <button type="submit">Signin</button>
+          <p class="form-link">
+            Don't Have An Account? <a href="./AdminPanel/signup.html">Register</a>
+          </p>
+          <p class="form-link">
+            <a href="./AdminPanel/admin-login.html">Admin Login</a>
+          </p>
+        </form>
+
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./AdminPanel/script/signin.js"></script>
+  </body>
+</html>

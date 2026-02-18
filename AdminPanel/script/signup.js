@@ -146,7 +146,7 @@ let signupForm = () => {
       icon: "success",
       confirmButtonText: "OK",
     }).then(() => {
-      window.location.href = "signin.html";
+      window.location.href = "../index.html";
     });
   }
 };

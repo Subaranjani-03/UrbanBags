@@ -5,12 +5,10 @@ let submit_btn = document.querySelector("form");
 
 submit_btn.addEventListener("submit", (e) => {
   e.preventDefault();
-  adminLogin()
+  adminLogin();
 });
 
-
 let adminLogin = () => {
-  // debugger
   //getting input value
   let uname = document.getElementById("uname");
   let password = document.getElementById("password");
@@ -23,7 +21,7 @@ let adminLogin = () => {
   let isCheck = true;
 
   if (uname.value === "") {
-    unameErr.innerText = "Must Fill This Field !";
+    unameErr.innerText = "Please fill out this field !";
     uname.style.border = "2px solid red";
     isCheck = false;
   } else if (uname.value !== "admin") {
@@ -36,10 +34,10 @@ let adminLogin = () => {
   }
 
   if (password.value === "") {
-    passwordErr.innerText = "Must Fill This Field !";
+    passwordErr.innerText = "Please fill out this field !";
     password.style.border = "2px solid red";
     isCheck = false;
-  } else if (password.value !== "admin") {
+  } else if (password.value !== "admin12") {
     passwordErr.innerText = "Incorrect Password";
     password.style.border = "2px solid red";
     isCheck = false;
@@ -49,9 +47,6 @@ let adminLogin = () => {
   }
 
   if (isCheck) {
-    // alert('Logged In Successfully!')
-    // window.location.href = 'index.html'
-
     Swal.fire({
       icon: "success",
       title: "Login Successful",

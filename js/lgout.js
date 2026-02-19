@@ -10,10 +10,11 @@ let logOut = () => {
     cancelButtonText: "Cancel",
   }).then((result) => {
     if (result.isConfirmed) {
-      
-      //Remove login session
-      // localStorage.removeItem("isLoggedIn");
+
+      // Remove login session
       // localStorage.removeItem("loggedUser");
+      // localStorage.removeItem("isLoggedIn");
+
 
       Swal.fire({
         title: "Logging out...",
@@ -26,7 +27,7 @@ let logOut = () => {
       });
 
       setTimeout(() => {
-        window.location.href = "admin-login.html";
+        window.location.href = "index.html";
       }, 2000);
     }
   });

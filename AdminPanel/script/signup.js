@@ -11,15 +11,7 @@ if (form) {
 // let regList = []
 let regList = JSON.parse(localStorage.getItem("regList")) || [];
 
-// let exisited = JSON.parse(localStorage.getItem("regList"))
-//     if(exisited == 0){
-//       regList = []
-//     }else{
-//       regList = exisited
-//     }
-
 let signupForm = () => {
-  // debugger
   //getting input value
   let uname = document.getElementById("uname");
   let email = document.getElementById("email");
@@ -40,7 +32,7 @@ let signupForm = () => {
   let isCheck = true;
 
   if (uname.value === "") {
-    unameErr.innerText = "Must Fill This Field !";
+    unameErr.innerText = "Please fill out this field !";
     uname.style.border = "2px solid red";
     isCheck = false;
   } else {
@@ -49,7 +41,7 @@ let signupForm = () => {
   }
 
   if (email.value === "") {
-    emailErr.innerText = "Must Fill This Field !";
+    emailErr.innerText = "Please fill out this field !";
     email.style.border = "2px solid red";
     isCheck = false;
   } else if (!emailPattern.test(email.value)) {
@@ -62,7 +54,7 @@ let signupForm = () => {
   }
 
   if (phnum.value === "") {
-    phnumErr.innerText = "Must Fill This Field !";
+    phnumErr.innerText = "Please fill out this field !";
     phnum.style.border = "2px solid red";
     isCheck = false;
   } else if (!/^[6-9]\d{9}$/.test(phnum.value)) {
@@ -75,11 +67,11 @@ let signupForm = () => {
   }
 
   if (password.value === "") {
-    passwordErr.innerText = "Must Fill This Field !";
+    passwordErr.innerText = "Please fill out this field !";
     password.style.border = "2px solid red";
     isCheck = false;
   } else if (password.value.length < 8) {
-    passwordErr.innerText = "Minimum 8 Characters !";
+    passwordErr.innerText = "Password requires at least 8 characters !";
     password.style.border = "2px solid red";
     isCheck = false;
   } else if (password.value !== cnfrmpass.value) {
@@ -92,11 +84,11 @@ let signupForm = () => {
   }
 
   if (cnfrmpass.value === "") {
-    cnfrmpassErr.innerText = "Must Fill This Field !";
+    cnfrmpassErr.innerText = "Please fill out this field !";
     cnfrmpass.style.border = "2px solid red";
     isCheck = false;
   } else if (cnfrmpass.value.length < 8) {
-    cnfrmpassErr.innerText = "Minimum 8 Characters !";
+    cnfrmpassErr.innerText = "Password requires at least 8 characters !";
     cnfrmpass.style.border = "2px solid red";
     isCheck = false;
   } else if (cnfrmpass.value !== password.value) {
@@ -111,16 +103,13 @@ let signupForm = () => {
   }
 
   if (isCheck) {
-   let alreadyUser = regList.filter(user =>
-    user.email === email.value
-  );
+    let alreadyUser = regList.filter((user) => user.email === email.value);
 
-  if (alreadyUser.length > 0) {
-    emailErr.innerText = "Email already registered!";
-    email.style.border = "2px solid red";
-    return;   // stop signup
-  }
-    // alert('Registered Successfully!')
+    if (alreadyUser.length > 0) {
+      emailErr.innerText = "Email already registered!";
+      email.style.border = "2px solid red";
+      return; // stop signup
+    }
 
     // object
     let regData = {
@@ -139,7 +128,7 @@ let signupForm = () => {
     loadData();
 
     //redirecting to signin page
-    // window.location.href = 'signin.html'
+
     Swal.fire({
       title: "Success!",
       text: "Registered Successfully!",

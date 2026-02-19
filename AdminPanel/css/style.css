@@ -618,19 +618,14 @@ footer .cpy-right {
 
 
 
+/* ------- Sidebar Toggle------- */
 
 
-
-
-
-/* ===== Sidebar Toggle ===== */
-
-
-/* Smooth animation */
 .container {
+  grid-template-columns: 270px auto;
   transition: .4s;
 }
-/* When sidebar is hidden */
+
 .container.hide-sidebar {
   grid-template-columns: 0px auto;
 }
@@ -638,8 +633,6 @@ aside {
   transition: .4s;
 }
 
-/* Completely hide aside */
 .container.hide-sidebar aside {
-  /* width: 0; */
   overflow: hidden;
 }

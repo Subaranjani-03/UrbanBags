@@ -1,4 +1,4 @@
-// product html page
+// product page
 //preventDefault()
 let submit_btn = document.querySelector("form");
 
@@ -14,6 +14,7 @@ submit_btn.addEventListener("submit", (e) => {
   }
 });
 
+//form validation function
 let validateForm = () => {
   let imgUrl = document.getElementById("img-url");
   let prodName = document.getElementById("prod-name");
@@ -33,7 +34,7 @@ let validateForm = () => {
 
   // Image
   if (imgUrl.value === "") {
-    urlError.innerText = "Must Fill This Field!";
+    urlError.innerText = "Please fill out this field !";
     imgUrl.style.border = "2px solid red";
     isCheck = false;
   } else {
@@ -43,7 +44,7 @@ let validateForm = () => {
 
   // Product Name
   if (prodName.value === "") {
-    prodError.innerText = "Must Fill This Field!";
+    prodError.innerText = "Please fill out this field !";
     prodName.style.border = "2px solid red";
     isCheck = false;
   } else if (prodName.value.length < 3) {
@@ -57,7 +58,7 @@ let validateForm = () => {
 
   // Category
   if (category.value.trim() === "") {
-    categoryError.innerText = "Must Fill This Field!";
+    categoryError.innerText = "Please fill out this field !";
     category.style.border = "2px solid red";
     isCheck = false;
   } else {
@@ -67,7 +68,7 @@ let validateForm = () => {
 
   // Price
   if (price.value === "") {
-    priceError.innerText = "Must Fill This Field!";
+    priceError.innerText = "Please fill out this field !";
     price.style.border = "2px solid red";
     isCheck = false;
   } else if (Number(price.value) < 0) {
@@ -81,7 +82,7 @@ let validateForm = () => {
 
   // Stock
   if (stock.value === "") {
-    stockError.innerText = "Must Fill This Field!";
+    stockError.innerText = "Please fill out this field !";
     stock.style.border = "2px solid red";
     isCheck = false;
   } else if (Number(stock.value) < 0) {
@@ -95,7 +96,7 @@ let validateForm = () => {
 
   // Offer
   if (offer.value === "") {
-    offerError.innerText = "Must Fill This Field!";
+    offerError.innerText = "Please fill out this field !";
     offer.style.border = "2px solid red";
     isCheck = false;
   } else if (Number(offer.value) < 0) {
@@ -110,7 +111,9 @@ let validateForm = () => {
   return isCheck;
 };
 
+//add data to form
 let regForm = () => {
+  //validation
   if (!validateForm()) return;
 
   let prodList = JSON.parse(localStorage.getItem("prodList")) || [];
@@ -122,6 +125,20 @@ let regForm = () => {
   let stock = document.getElementById("stock");
   let offer = document.getElementById("offer");
 
+  //Duplicate Product Name Check
+  let duplicate = prodList.filter((ele) => {
+    return ele.prodName.toLowerCase() === prodName.toLowerCase();
+  });
+
+  if (duplicate.length > 0) {
+    Swal.fire({
+      icon: "error",
+      title: "Product name already exists!",
+    });
+    return;
+  }
+
+  //object creation
   let regData = {
     productId: Date.now(),
     imgUrl: imgUrl.value,
@@ -132,8 +149,10 @@ let regForm = () => {
     offer: offer.value,
   };
 
+  //push object to array
   prodList.push(regData);
 
+  //set array to local storage
   localStorage.setItem("prodList", JSON.stringify(prodList));
 
   Swal.fire({
@@ -163,7 +182,7 @@ let loadData = () => {
       tr += `<tr>
                     <td>${index + 1}</td>
                     <td>${ele.productId}</td>
-                    <td><img src="${ele.imgUrl}" alt=${ele.prodName} width="80px" height="80px" />  </td> 
+                    <td><img src="${ele.imgUrl}" alt="${ele.prodName}" width="80px" height="80px" />  </td> 
                     <td>${ele.prodName}</td>   
                     <td>${ele.category}</td>   
                     <td>${ele.price}</td>   
@@ -216,10 +235,28 @@ let updatePro = (productId) => {
 };
 
 let updateData = () => {
+
+  //validation
   if (!validateForm()) return;
 
   let pid = document.getElementById("productId").value;
   let pl = JSON.parse(localStorage.getItem("prodList")) || [];
+
+  //  Duplicate Check
+  let duplicate = pl.filter((ele) => {
+    return (
+      ele.prodName.toLowerCase() === prodName.toLowerCase() &&
+      ele.productId != pid
+    );
+  });
+
+  if (duplicate.length > 0) {
+    Swal.fire({
+      icon: "error",
+      title: "Product name already exists!",
+    });
+    return;
+  }
 
   let productData = {
     productId: Number(pid),
@@ -261,46 +298,8 @@ let updateData = () => {
   document.querySelector("#submitbtn").style.display = "block";
 };
 
-//delete product
-// let deletePro = (productId) => {
-//   // console.log("delete" + productId)
-
-//   let con = confirm("Do you want to Delete this Product Id?");
-
-//   // console.log(con)
-
-//   if (con) {
-//     let productList = JSON.parse(localStorage.getItem("prodList"));
-
-//     let fpl = productList.filter((ele) => {
-//       // Keep all products except the one whose productId matches
-//       // console.log(ele)
-//       if (ele.productId != productId) {
-//         // console.log("same" , ele.productId)
-//         return ele;
-//       }
-//     });
-
-//     localStorage.setItem("prodList", JSON.stringify(fpl));
-
-//     Swal.fire({
-//       icon: "success",
-//       title: "Deleted!",
-//       text: "Product Deleted successfully.",
-//       timer: 1500,
-//       showConfirmButton: false,
-//     });
-//     loadData();
-//   } else {
-//     alert("your product is safe");
-//   }
-// };
-
-
-
 // delete product
 let deletePro = (productId) => {
-
   Swal.fire({
     title: "Are you sure?",
     text: "Do you want to delete this product?",
@@ -308,11 +307,9 @@ let deletePro = (productId) => {
     showCancelButton: true,
     confirmButtonColor: "#d33",
     cancelButtonColor: "#3085d6",
-    confirmButtonText: "Yes, delete it!"
+    confirmButtonText: "Yes, delete it!",
   }).then((result) => {
-
     if (result.isConfirmed) {
-
       let productList = JSON.parse(localStorage.getItem("prodList")) || [];
 
       let updatedList = productList.filter((ele) => {
@@ -330,9 +327,7 @@ let deletePro = (productId) => {
       });
 
       loadData();
-
     } else if (result.dismiss === Swal.DismissReason.cancel) {
-
       Swal.fire({
         icon: "info",
         title: "Safe!",
@@ -340,8 +335,6 @@ let deletePro = (productId) => {
         timer: 1500,
         showConfirmButton: false,
       });
-
     }
-
   });
 };

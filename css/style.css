@@ -99,7 +99,7 @@ header .navigation .nav {
 .navigation .icons {
   /* border: 1px solid red; */
   height: 100%;
-  width: 120px;
+  width: 130px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -129,8 +129,8 @@ header .navigation .nav {
 }
 .navigation .icons #count {
   position: absolute;
-  right: -10px;
-  top: 10px;
+  right: 40px;
+  top: 8px;
   color: white;
   font-size: 0.7rem;
   font-weight: 600;

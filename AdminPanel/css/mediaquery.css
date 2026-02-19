@@ -2,51 +2,74 @@
 
 /* -------tab view-------- */
 @media all and (max-width: 768px) {
+  /* ------- Sidebar Toggle------- */
   .container {
     grid-template-columns: 0px auto;
+    transition: .4s;
   }
+
   aside {
     display: none;
     overflow: hidden;
-    transition: 0.4s;
+  }
+  aside .profile{
+    padding-top: 60px;
+  }
+  aside .nav-links{
+    margin-top: 60px;
+  }
+  aside .profile-icons{
+    margin-top: 210px;
   }
 
-  .container.show-sidebar {
-    grid-template-columns: 250px auto;
+  .container.hide-sidebar {
+    grid-template-columns: 200px auto;
   }
-  .container.show-sidebar aside {
+
+  .container.hide-sidebar aside {
     display: block;
   }
 
   /* ---------dashboard------------ */
+
   .container main .main-card {
-    padding: 10px;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    height: auto;
+    padding: 20px;
   }
+
   .container main .main-card .main-sub-card {
-    width: 200px;
-    height: 80%;
-  }
-  .main-card .main-sub-card .dash-card-top .dash-card1 {
-    padding-left: 10px;
+    width: 100%;
+    height: 200px;
   }
   .main-card .main-sub-card .dash-card-top .dash-card .dash-card-amt {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
   .dash-card-top .dash-card2 .fa-users,
   .dash-card-top .dash-card2 .fa-bag-shopping,
   .dash-card-top .dash-card2 .fa-chart-simple,
   .dash-card-top .dash-card2 .fa-arrow-up-wide-short {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
 
-  /* -------catergory------- */
-  .wrapper .cat-box {
-    margin-bottom: 0px;
+  /* -----customer------- */
+  .container .register-wrapper {
+    padding: 15px;
   }
-  /* -------------product page---------- */
-  .wrapper .form-box {
-    margin-top: 40px;
+
+  .container .register-wrapper .reg-table {
+    width: 100%;
+    /* display: block; */
+    overflow: auto;
+    white-space: nowrap;
+  }
+
+  .container .register-wrapper .reg-table th,
+  .container .register-wrapper .reg-table td {
+    padding: 12px;
+    font-size: 0.9rem;
   }
 
   /* --------footer------ */
@@ -57,24 +80,65 @@
 
 /* -------mobile view-------- */
 @media all and (max-width: 576px) {
+   /* ------- Sidebar Toggle------- */
   .container {
     grid-template-columns: 0px auto;
+    transition: .4s;
   }
+
   aside {
     display: none;
     overflow: hidden;
   }
 
+  aside .profile{
+    padding-top: 60px;
+  }
+  aside .profile img{
+    height: 50px;
+    width: 50px;
+  }
+  aside .profile .profile-name{
+    font-size: 1.2rem;
+  }
+  aside .nav-links{
+    margin-top: 60px;
+    height: auto;
+  }
+  aside .nav-links .nav-sub{
+    font-size: .6rem;
+    padding:5px 0px ;
+    gap: 10px;
+    
+  }
+  aside .profile-icons{
+    margin-top: 150px;
+    gap: 2px;
+  }
+  aside .profile-icons a{
+    font-size: .9rem;
+  }
+
+  .container.hide-sidebar {
+    grid-template-columns: 100px auto;
+  }
+
+  .container.hide-sidebar aside {
+    display: block;
+  }
+
+
   /* ---------dashboard------------ */
   .container main .main-card {
-    padding: 10px;
-    gap: 10px;
-    flex-direction: column;
-    height: 600px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    height: auto;
+    padding: 20px;
   }
   .container main .main-card .main-sub-card {
-    width: 300px;
-    height: 90%;
+    /* width: 300px; */
+    height: 150px;
   }
   .main-card .main-sub-card .dash-card-top .dash-card .dash-card-amt {
     font-size: 2rem;
@@ -89,7 +153,6 @@
   /* -------catergory------- */
   .wrapper .cat-box {
     width: 300px;
-    margin-bottom: 120px;
   }
   .wrapper .cat-box form {
     width: auto;
@@ -99,27 +162,77 @@
   }
   .wrapper .cat-box form .cat-input input {
     width: 250px;
+    border: 1px solid;
   }
   .wrapper .cat-box button {
     width: 250px;
   }
-  .container .wrapper .cat-table {
+  /* .container .wrapper .cat-table {
     width: 300px;
+  } */
+
+  .container .category-wrapper {
+    padding: 10px;
+  }
+
+  .container .category-wrapper .cat-table {
+    width: 100%;
+    display: block;
+    overflow: auto;
+    white-space: nowrap;
+  }
+
+  .container .category-wrapper .cat-table th,
+  .container .category-wrapper .cat-table td {
+    padding: 10px;
+    font-size: 0.8rem;
   }
 
   /* -------------product page---------- */
   .wrapper .form-box {
     width: 350px;
-    margin-bottom: 100px;
-    margin-top: 180px;
   }
   .wrapper .form-box form .form-input input {
     width: 250px;
+    border: 1px solid;
   }
   .wrapper .form-box button {
     width: 200px;
   }
- 
+  .container .product-wrapper {
+    padding: 10px;
+    overflow-x: auto; /* scroll on wrapper */
+  }
+
+  .container .product-wrapper .prod-table {
+    width: max-content; /* keep natural width */
+    min-width: 100%;
+  }
+
+  .container .product-wrapper .prod-table th,
+  .container .product-wrapper .prod-table td {
+    padding: 10px;
+    font-size: 0.8rem;
+    white-space: nowrap; /* prevent text breaking */
+  }
+
+  /* -----customer------- */
+  .container .register-wrapper {
+    padding: 15px;
+  }
+
+  .container .register-wrapper .reg-table {
+    width: 100%;
+    display: block;
+    overflow: auto;
+    white-space: nowrap;
+  }
+
+  .container .register-wrapper .reg-table th,
+  .container .register-wrapper .reg-table td {
+    padding: 12px;
+    font-size: 0.8rem;
+  }
   /* --------footer------ */
   .container footer {
     font-size: 0.8rem;

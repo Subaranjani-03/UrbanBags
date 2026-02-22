@@ -74,10 +74,6 @@ let signupForm = () => {
     passwordErr.innerText = "Password requires at least 8 characters !";
     password.style.border = "2px solid red";
     isCheck = false;
-  } else if (password.value !== cnfrmpass.value) {
-    passwordErr.innerText = "Mismatched Password !";
-    password.style.border = "2px solid red";
-    isCheck = false;
   } else {
     passwordErr.innerText = "";
     password.style.border = "";
@@ -93,7 +89,6 @@ let signupForm = () => {
     isCheck = false;
   } else if (cnfrmpass.value !== password.value) {
     cnfrmpassErr.innerText = "Mismatched Password !";
-    passwordErr.innerText = "Mismatched Password !";
     cnfrmpass.style.border = "2px solid red";
     password.style.border = "2px solid red";
     isCheck = false;

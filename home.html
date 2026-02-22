@@ -14,7 +14,10 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
   </head>
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   <body>
     <div class="home-page">
       <!--------- navigation --------->
@@ -34,13 +37,15 @@
           </div>
           <div class="icons">
             <i class="fa-solid fa-bars" onclick="btnClick()"></i>
-            <!-- <a href="./index.html"><i class="fa-solid fa-user"></i></a> -->
-            <a href="./wishlist.html"><i class="fa-solid fa-heart"></i></a>
-            <a href="./cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
-            <a href="#" onclick="logOut()"><i class="fa-solid fa-right-from-bracket"></i></a>
-            <span id="count">0</span>
+            <a href="#"><i class="fa-solid fa-heart"></i></a>
+            <a href="./cart.html" class="cart-btn"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="#" onclick="logOut()"
+              ><i class="fa-solid fa-right-from-bracket"></i
+            ></a>
+            <span id="count"></span>
           </div>
         </div>
+
         <!-- navigation bar for media query -->
         <div class="bar-nav">
           <ul>
@@ -70,8 +75,7 @@
             travelers. Find the right bag for your daily needs at affordable
             prices.
           </p>
-          <!-- <button class="shopNow">Shop Now</button> -->
-           <a href="./shop.html" class="shopNow">Shop Now</a>
+          <a href="./shop.html" class="shopNow">Shop Now</a>
         </div>
       </div>
     </div>
@@ -105,14 +109,13 @@
 
     <section class="product-page">
       <h2 class="section-title">Featured Products</h2>
-
-      <div class="products-grid">
+        <div class="products-grid" id="productsContainer">
         <!-- Card 1 -->
         <div class="product-card">
           <span class="offer-badge">20% OFF</span>
 
           <div class="upper-cart">
-            <a href="./wishlist.html"><i class="fa-solid fa-heart wishlist"></i></a>
+            <i class="fa-solid fa-heart wishlist"></i>
             <i class="fa-solid fa-share-nodes share"></i>
           </div>
 
@@ -125,7 +128,15 @@
             <p class="product-price">₹2,399</p>
             <p class="product-strike">₹2,999</p>
           </div>
-          <button class="add-cart">
+          <button
+            class="add-cart"
+            data-id="1"
+            data-name="Urban Travel Backpack"
+            data-price="2999"
+            data-offer="20"
+            data-stock="5"
+            data-img="./image/ac1.jpg"
+          >
             <i class="fa-solid fa-cart-shopping"></i> Add to Cart
           </button>
           <div class="rating">
@@ -138,7 +149,7 @@
         <div class="product-card">
           <span class="offer-badge">10% OFF</span>
           <div class="upper-cart">
-            <a href="./wishlist.html"><i class="fa-solid fa-heart wishlist"></i></a>
+            <i class="fa-solid fa-heart wishlist"></i>
             <i class="fa-solid fa-share-nodes share"></i>
           </div>
           <div class="product-img">
@@ -150,7 +161,15 @@
             <p class="product-price">₹1,499</p>
             <p class="product-strike">₹1,699</p>
           </div>
-          <button class="add-cart">
+          <button
+            class="add-cart"
+            data-id="2"
+            data-name="Campus Pro Backpack"
+            data-price="1699"
+            data-offer="10"
+            data-stock="5"
+            data-img="./image/ac2.jpg"
+          >
             <i class="fa-solid fa-cart-shopping"></i> Add to Cart
           </button>
           <div class="rating">
@@ -163,7 +182,7 @@
         <div class="product-card">
           <span class="offer-badge">15% OFF</span>
           <div class="upper-cart">
-            <a href="./wishlist.html"><i class="fa-solid fa-heart wishlist"></i></a>
+            <i class="fa-solid fa-heart wishlist"></i>
             <i class="fa-solid fa-share-nodes share"></i>
           </div>
           <div class="product-img">
@@ -175,7 +194,15 @@
             <p class="product-price">₹2,199</p>
             <p class="product-strike">₹2,599</p>
           </div>
-          <button class="add-cart">
+          <button
+            class="add-cart"
+            data-id="3"
+            data-name="Elegant Leather Handbag"
+            data-price="2599"
+            data-offer="15"
+            data-stock="5"
+            data-img="./image/ac13.jpg"
+          >
             <i class="fa-solid fa-cart-shopping"></i> Add to Cart
           </button>
           <div class="rating">
@@ -188,14 +215,11 @@
         <div class="product-card">
           <span class="offer-badge">25% OFF</span>
           <div class="upper-cart">
-            <a href="./wishlist.html"><i class="fa-solid fa-heart wishlist"></i></a>
+            <i class="fa-solid fa-heart wishlist"></i>
             <i class="fa-solid fa-share-nodes share"></i>
           </div>
           <div class="product-img">
-            <img
-              src="./image/ac4.jpg"
-              alt="Executive Laptop Messenger Bag"
-            />
+            <img src="./image/ac4.jpg" alt="Executive Laptop Messenger Bag" />
           </div>
           <h3 class="product-name">Executive Laptop Messenger Bag</h3>
           <p class="product-category">Office Bags</p>
@@ -203,7 +227,15 @@
             <p class="product-price">₹2,999</p>
             <p class="product-strike">₹3,999</p>
           </div>
-          <button class="add-cart">
+          <button
+            class="add-cart"
+            data-id="4"
+            data-name="Executive Laptop Messenger Bag"
+            data-price="3999"
+            data-offer="25"
+            data-stock="5"
+            data-img="./image/ac4.jpg"
+          >
             <i class="fa-solid fa-cart-shopping"></i> Add to Cart
           </button>
           <div class="rating">
@@ -216,7 +248,7 @@
         <div class="product-card">
           <span class="offer-badge">20% OFF</span>
           <div class="upper-cart">
-            <a href="./wishlist.html"><i class="fa-solid fa-heart wishlist"></i></a>
+            <i class="fa-solid fa-heart wishlist"></i>
             <i class="fa-solid fa-share-nodes share"></i>
           </div>
           <div class="product-img">
@@ -228,7 +260,15 @@
             <p class="product-price">₹3,199</p>
             <p class="product-strike">₹3,999</p>
           </div>
-          <button class="add-cart">
+          <button
+            class="add-cart"
+            data-id="5"
+            data-name="Trekking Adventure Rucksack"
+            data-price="3999"
+            data-offer="20"
+            data-stock="5"
+            data-img="./image/ac5.jpg"
+          >
             <i class="fa-solid fa-cart-shopping"></i> Add to Cart
           </button>
           <div class="rating">
@@ -241,7 +281,7 @@
         <div class="product-card">
           <span class="offer-badge">10% OFF</span>
           <div class="upper-cart">
-            <a href="./wishlist.html"><i class="fa-solid fa-heart wishlist"></i></a>
+            <i class="fa-solid fa-heart wishlist"></i>
             <i class="fa-solid fa-share-nodes share"></i>
           </div>
           <div class="product-img">
@@ -253,7 +293,15 @@
             <p class="product-price">₹1,299</p>
             <p class="product-strike">₹1,499</p>
           </div>
-          <button class="add-cart">
+          <button
+            class="add-cart"
+            data-id="6"
+            data-name="Casual Daypack"
+            data-price="1499"
+            data-offer="10"
+            data-stock="5"
+            data-img="./image/ac6.jpg"
+          >
             <i class="fa-solid fa-cart-shopping"></i> Add to Cart
           </button>
           <div class="rating">
@@ -266,7 +314,7 @@
         <div class="product-card">
           <span class="offer-badge">15% OFF</span>
           <div class="upper-cart">
-            <a href="./wishlist.html"><i class="fa-solid fa-heart wishlist"></i></a>
+            <i class="fa-solid fa-heart wishlist"></i>
             <i class="fa-solid fa-share-nodes share"></i>
           </div>
           <div class="product-img">
@@ -278,7 +326,15 @@
             <p class="product-price">₹1,899</p>
             <p class="product-strike">₹2,199</p>
           </div>
-          <button class="add-cart">
+          <button
+            class="add-cart"
+            data-id="7"
+            data-name="Premium Tote Bag"
+            data-price="2199"
+            data-offer="15"
+            data-stock="5"
+            data-img="./image/ac10.jpg"
+          >
             <i class="fa-solid fa-cart-shopping"></i> Add to Cart
           </button>
           <div class="rating">
@@ -291,7 +347,7 @@
         <div class="product-card">
           <span class="offer-badge">25% OFF</span>
           <div class="upper-cart">
-            <a href="./wishlist.html"><i class="fa-solid fa-heart wishlist"></i></a>
+            <i class="fa-solid fa-heart wishlist"></i>
             <i class="fa-solid fa-share-nodes share"></i>
           </div>
           <div class="product-img">
@@ -303,7 +359,15 @@
             <p class="product-price">₹2,499</p>
             <p class="product-strike">₹3,299</p>
           </div>
-          <button class="add-cart">
+          <button
+            class="add-cart"
+            data-id="8"
+            data-name="Slim Office Laptop Bag"
+            data-price="3299"
+            data-offer="25"
+            data-stock="5"
+            data-img="./image/ac7.jpg"
+          >
             <i class="fa-solid fa-cart-shopping"></i> Add to Cart
           </button>
           <div class="rating">
@@ -316,7 +380,7 @@
         <div class="product-card">
           <span class="offer-badge">20% OFF</span>
           <div class="upper-cart">
-            <a href="./wishlist.html"><i class="fa-solid fa-heart wishlist"></i></a>
+            <i class="fa-solid fa-heart wishlist"></i>
             <i class="fa-solid fa-share-nodes share"></i>
           </div>
           <div class="product-img">
@@ -328,7 +392,15 @@
             <p class="product-price">₹2,799</p>
             <p class="product-strike">₹3,499</p>
           </div>
-          <button class="add-cart">
+          <button
+            class="add-cart"
+            data-id="9"
+            data-name="Waterproof Travel Duffel"
+            data-price="3499"
+            data-offer="20"
+            data-stock="5"
+            data-img="./image/ac8.jpg"
+          >
             <i class="fa-solid fa-cart-shopping"></i> Add to Cart
           </button>
           <div class="rating">
@@ -341,7 +413,7 @@
         <div class="product-card">
           <span class="offer-badge">10% OFF</span>
           <div class="upper-cart">
-            <a href="./wishlist.html"><i class="fa-solid fa-heart wishlist"></i></a>
+            <i class="fa-solid fa-heart wishlist"></i>
             <i class="fa-solid fa-share-nodes share"></i>
           </div>
           <div class="product-img">
@@ -353,7 +425,15 @@
             <p class="product-price">₹1,199</p>
             <p class="product-strike">₹1,499</p>
           </div>
-          <button class="add-cart">
+          <button
+            class="add-cart"
+            data-id="10"
+            data-name="Student Classic Backpack"
+            data-price="1499"
+            data-offer="10"
+            data-stock="5"
+            data-img="./image/ac9.jpg"
+          >
             <i class="fa-solid fa-cart-shopping"></i> Add to Cart
           </button>
           <div class="rating">
@@ -366,7 +446,7 @@
         <div class="product-card">
           <span class="offer-badge">15% OFF</span>
           <div class="upper-cart">
-            <a href="./wishlist.html"><i class="fa-solid fa-heart wishlist"></i></a>
+            <i class="fa-solid fa-heart wishlist"></i>
             <i class="fa-solid fa-share-nodes share"></i>
           </div>
           <div class="product-img">
@@ -378,7 +458,15 @@
             <p class="product-price">₹1,599</p>
             <p class="product-strike">₹1,999</p>
           </div>
-          <button class="add-cart">
+          <button
+            class="add-cart"
+            data-id="11"
+            data-name="Designer Casual Clutch"
+            data-price="1999"
+            data-offer="15"
+            data-stock="5"
+            data-img="./image/ac11.jpg"
+          >
             <i class="fa-solid fa-cart-shopping"></i> Add to Cart
           </button>
           <div class="rating">
@@ -391,7 +479,7 @@
         <div class="product-card">
           <span class="offer-badge">25% OFF</span>
           <div class="upper-cart">
-            <a href="./wishlist.html"><i class="fa-solid fa-heart wishlist"></i></a>
+            <i class="fa-solid fa-heart wishlist"></i>
             <i class="fa-solid fa-share-nodes share"></i>
           </div>
           <div class="product-img">
@@ -403,7 +491,15 @@
             <p class="product-price">₹3,499</p>
             <p class="product-strike">₹4,499</p>
           </div>
-          <button class="add-cart">
+          <button
+            class="add-cart"
+            data-id="12"
+            data-name="Corporate Leather Briefcase"
+            data-price="4499"
+            data-offer="25"
+            data-stock="5"
+            data-img="./image/ac12.jpg"
+          >
             <i class="fa-solid fa-cart-shopping"></i> Add to Cart
           </button>
           <div class="rating">
@@ -411,7 +507,6 @@
             <span class="rating-value">5</span>
           </div>
         </div>
-        
       </div>
     </section>
 
@@ -502,9 +597,7 @@
           <h2 class="contact-title2">For Enquiry</h2>
           <form action="">
             <div class="upper-box">
-              <!-- <label for="name">Name</label> -->
               <input type="text" name="name" id="name" placeholder="Name" />
-              <!-- <label for="email">E-Mail</label> -->
               <input
                 type="email"
                 name="email"
@@ -512,7 +605,6 @@
                 placeholder="E-Mail"
               />
             </div>
-            <!-- <label for="msg">Message</label> -->
             <textarea
               name="msg"
               id="msg"
@@ -573,8 +665,7 @@
         <div class="footer-support">
           <h4 class="footer-title">Support</h4>
           <ul>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="./policy.html">Privacy Policy</a></li>
             <li><a href="./contact.html"> Email: support@UrbanBags.com</a></li>
             <li>Phone: +91 9876543210</li>
           </ul>
@@ -588,9 +679,10 @@
       </div>
     </footer>
 
-    <script src="js/script.js"></script>
-    <script src="js/inc.js"></script>
-    <script src="js/lgout.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/script.js"></script>
+    <script src="js/lgout.js"></script>
+    <script src="js/prod.js"></script>
+    <script src="js/cart.js"></script>
   </body>
 </html>

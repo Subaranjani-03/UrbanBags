@@ -5,7 +5,6 @@ let ampm = document.querySelector("#ampm");
 
 let time = setInterval(() => {
   let date = new Date();
-  //   console.log(date);
 
   let hr = date.getHours();
   let min = String(date.getMinutes()).padStart(2, "0");

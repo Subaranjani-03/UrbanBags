@@ -30,15 +30,18 @@
             <li><a href="./contact.html">Contact</a></li>
           </ul>
         </div>
-        <div class="icons">
-            <i class="fa-solid fa-bars" onclick="btnClick()"></i>
-            <!-- <a href="./index.html"><i class="fa-solid fa-user"></i></a> -->
-            <a href="./wishlist.html"><i class="fa-solid fa-heart"></i></a>
-            <a href="./cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
-            <a href="#" onclick="logOut()"><i class="fa-solid fa-right-from-bracket"></i></a>
-            <span id="count">0</span>
-          </div>
+        <div class="icons navicons">
+          <i class="fa-solid fa-bars" onclick="btnClick()"></i>
+          <!-- <a href="./index.html"><i class="fa-solid fa-user"></i></a> -->
+          <a href="#"><i class="fa-solid fa-heart"></i></a>
+          <!-- <a href="./cart.html" class="cart-btn"><i class="fa-solid fa-cart-shopping"></i></a> -->
+          <a href="#" onclick="logOut()"
+            ><i class="fa-solid fa-right-from-bracket"></i
+          ></a>
+          <!-- <span id="count">0</span> -->
+        </div>
       </div>
+
       <!-- navigation bar for media query -->
       <div class="bar-nav">
         <ul>
@@ -49,7 +52,9 @@
             <i class="fa-solid fa-circle-info"></i>
             <a href="./about.html">About</a>
           </li>
-          <li><i class="fa-solid fa-shop"></i> <a href="./shop.html">Shop</a></li>
+          <li>
+            <i class="fa-solid fa-shop"></i> <a href="./shop.html">Shop</a>
+          </li>
           <li>
             <i class="fa-solid fa-phone"></i>
             <a href="./contact.html">Contact</a>
@@ -147,8 +152,7 @@
         <div class="footer-support">
           <h4 class="footer-title">Support</h4>
           <ul>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="./policy.html">Privacy Policy</a></li>
             <li><a href="./contact.html"> Email: support@UrbanBags.com</a></li>
             <li>Phone: +91 9876543210</li>
           </ul>
@@ -162,6 +166,10 @@
       </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/script.js"></script>
+    <script src="js/lgout.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/prod.js"></script>
   </body>
 </html>

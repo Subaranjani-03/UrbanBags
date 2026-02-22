@@ -34,7 +34,7 @@ let validateForm = () => {
 
   // Image
   if (imgUrl.value === "") {
-    urlError.innerText = "Please fill out this field !";
+    urlError.innerText = "Please fill out valid URL !";
     imgUrl.style.border = "2px solid red";
     isCheck = false;
   } else {
@@ -71,7 +71,7 @@ let validateForm = () => {
     priceError.innerText = "Please fill out this field !";
     price.style.border = "2px solid red";
     isCheck = false;
-  } else if (Number(price.value) < 0) {
+  } else if (Number(price.value) <= 0) {
     priceError.innerText = "Invalid Price!";
     price.style.border = "2px solid red";
     isCheck = false;
@@ -85,7 +85,7 @@ let validateForm = () => {
     stockError.innerText = "Please fill out this field !";
     stock.style.border = "2px solid red";
     isCheck = false;
-  } else if (Number(stock.value) < 0) {
+  } else if (Number(stock.value) <= 0) {
     stockError.innerText = "Invalid Stock!";
     stock.style.border = "2px solid red";
     isCheck = false;
@@ -127,7 +127,7 @@ let regForm = () => {
 
   //Duplicate Product Name Check
   let duplicate = prodList.filter((ele) => {
-    return ele.prodName.toLowerCase() === prodName.toLowerCase();
+    return ele.prodName.toLowerCase() === prodName.value.toLowerCase();
   });
 
   if (duplicate.length > 0) {
@@ -182,7 +182,7 @@ let loadData = () => {
       tr += `<tr>
                     <td>${index + 1}</td>
                     <td>${ele.productId}</td>
-                    <td><img src="${ele.imgUrl}" alt="${ele.prodName}" width="80px" height="80px" />  </td> 
+                    <td><img src="${ele.imgUrl}" alt="${ele.prodName}" width="80px" height="80px" border = '1px solid purple'/>  </td> 
                     <td>${ele.prodName}</td>   
                     <td>${ele.category}</td>   
                     <td>${ele.price}</td>   
@@ -202,7 +202,24 @@ let loadData = () => {
 
   tbody.innerHTML = tr;
 };
+// Load categories into dropdown
+let loadCategories = () => {
+  let categorySelect = document.getElementById("category");
+  let catList = JSON.parse(localStorage.getItem("catList")) || [];
+
+  // Reset dropdown
+  categorySelect.innerHTML = `<option value="">Select Category</option>`;
+
+  catList.forEach((ele) => {
+    categorySelect.innerHTML += `
+      <option value="${ele.category}">
+        ${ele.category}
+      </option>
+    `;
+  });
+};
 loadData();
+loadCategories();
 
 //update product
 
@@ -235,11 +252,11 @@ let updatePro = (productId) => {
 };
 
 let updateData = () => {
-
   //validation
   if (!validateForm()) return;
 
   let pid = document.getElementById("productId").value;
+  let prodName = document.getElementById("prod-name").value;
   let pl = JSON.parse(localStorage.getItem("prodList")) || [];
 
   //  Duplicate Check

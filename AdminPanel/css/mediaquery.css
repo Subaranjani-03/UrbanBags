@@ -1,24 +1,25 @@
 /* --------media query------- */
 
 /* -------tab view-------- */
+
 @media all and (max-width: 768px) {
+
   /* ------- Sidebar Toggle------- */
   .container {
     grid-template-columns: 0px auto;
-    transition: .4s;
+    transition: 0.4s;
   }
-
   aside {
     display: none;
     overflow: hidden;
   }
-  aside .profile{
+  aside .profile {
     padding-top: 60px;
   }
-  aside .nav-links{
+  aside .nav-links {
     margin-top: 60px;
   }
-  aside .profile-icons{
+  aside .profile-icons {
     margin-top: 210px;
   }
 
@@ -72,6 +73,42 @@
     font-size: 0.9rem;
   }
 
+  /* ---------product--------- */
+  .wrapper .form-box {
+    width: 500px;
+  }
+
+  .product-wrapper .form-box form {
+    width: auto;
+  }
+
+  .product-wrapper .form-box form .form-input input,
+  .product-wrapper .form-box form .form-input select {
+    width: 400px;
+    border: 1px solid;
+  }
+
+  .wrapper .form-box button {
+    width: 250px;
+  }
+
+  .container .product-wrapper {
+    padding: 15px;
+  }
+
+  /* Scroll only table */
+  .container .product-wrapper .prod-table {
+    display: block;
+    width: 100%;
+    overflow: auto;
+    white-space: nowrap;
+  }
+
+  .container .product-wrapper .prod-table th,
+  .container .product-wrapper .prod-table td {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
   /* --------footer------ */
   .container footer {
     font-size: 1rem;
@@ -79,54 +116,48 @@
 }
 
 /* -------mobile view-------- */
+
 @media all and (max-width: 576px) {
-   /* ------- Sidebar Toggle------- */
+
+  /* ------- Sidebar Toggle------- */
+
   .container {
-    grid-template-columns: 0px auto;
-    transition: .4s;
+    display: block;
+  }
+  header,
+  main,
+  footer {
+    width: 100%;
   }
 
   aside {
-    display: none;
-    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: -270px;
+    width: 270px;
+    height: 100vh;
+    z-index: 1000;
+    transition: left 0.4s ease;
   }
-
-  aside .profile{
-    padding-top: 60px;
+  aside .profile {
+    gap: 10px;
+    padding: 10px 30px;
   }
-  aside .profile img{
-    height: 50px;
-    width: 50px;
-  }
-  aside .profile .profile-name{
-    font-size: 1.2rem;
-  }
-  aside .nav-links{
-    margin-top: 60px;
+  aside .nav-links {
+    gap: 10px;
     height: auto;
   }
-  aside .nav-links .nav-sub{
-    font-size: .6rem;
-    padding:5px 0px ;
+  aside .nav-links .nav-sub {
     gap: 10px;
-    
   }
-  aside .profile-icons{
-    margin-top: 150px;
-    gap: 2px;
+  aside .profile-icons {
+    margin-top: 110px;
+    padding: 10px;
   }
-  aside .profile-icons a{
-    font-size: .9rem;
-  }
-
-  .container.hide-sidebar {
-    grid-template-columns: 100px auto;
-  }
-
+  /* Show sidebar */
   .container.hide-sidebar aside {
-    display: block;
+    left: 0;
   }
-
 
   /* ---------dashboard------------ */
   .container main .main-card {
@@ -167,9 +198,6 @@
   .wrapper .cat-box button {
     width: 250px;
   }
-  /* .container .wrapper .cat-table {
-    width: 300px;
-  } */
 
   .container .category-wrapper {
     padding: 10px;
@@ -192,8 +220,12 @@
   .wrapper .form-box {
     width: 350px;
   }
-  .wrapper .form-box form .form-input input {
-    width: 250px;
+  .product-wrapper .form-box form {
+    width: auto;
+  }
+  .product-wrapper .form-box form .form-input input,
+  .product-wrapper .form-box form .form-input select {
+    width: 300px;
     border: 1px solid;
   }
   .wrapper .form-box button {
@@ -201,19 +233,19 @@
   }
   .container .product-wrapper {
     padding: 10px;
-    overflow-x: auto; /* scroll on wrapper */
   }
 
   .container .product-wrapper .prod-table {
-    width: max-content; /* keep natural width */
-    min-width: 100%;
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
   }
 
   .container .product-wrapper .prod-table th,
   .container .product-wrapper .prod-table td {
     padding: 10px;
     font-size: 0.8rem;
-    white-space: nowrap; /* prevent text breaking */
   }
 
   /* -----customer------- */

@@ -27,7 +27,7 @@ let logOut = () => {
 
       setTimeout(() => {
         window.location.href = "admin-login.html";
-      }, 2000);
+      }, 1000);
     }
   });
 };

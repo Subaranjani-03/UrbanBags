@@ -1,4 +1,4 @@
-let logOut = () => {
+function logOut(){
   Swal.fire({
     title: "Are you sure?",
     text: "You will be logged out of your account!",
@@ -28,7 +28,7 @@ let logOut = () => {
 
       setTimeout(() => {
         window.location.href = "index.html";
-      }, 2000);
+      }, 1000);
     }
   });
 };

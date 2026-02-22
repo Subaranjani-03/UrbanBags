@@ -24,16 +24,6 @@ let validateCat = () => {
 
   let isCheck = true;
 
-  // Image
-  if (imgUrl.value === "") {
-    urlError.innerText = "Please fill out this field !";
-    imgUrl.style.border = "2px solid red";
-    isCheck = false;
-  } else {
-    urlError.innerText = "";
-    imgUrl.style.border = "";
-  }
-
   if (category.value === "") {
     categoryError.innerText = "Please fill out this field !";
     category.style.border = "2px solid red";
@@ -47,6 +37,15 @@ let validateCat = () => {
     category.style.border = "";
   }
 
+  // Image
+  if (imgUrl.value === "") {
+    urlError.innerText = "Please fill out valid URL !";
+    imgUrl.style.border = "2px solid red";
+    isCheck = false;
+  } else {
+    urlError.innerText = "";
+    imgUrl.style.border = "";
+  }
   return isCheck;
 };
 
@@ -110,7 +109,7 @@ let loadData = () => {
       tr += `<tr>
                     <td>${index + 1}</td>
                     <td>${ele.productId}</td>
-                    <td><img src="${ele.imgUrl}" alt="${ele.category}" width="80px" height="80px" />  </td> 
+                    <td><img src="${ele.imgUrl}" alt="${ele.category}" width="80px" height="80px" border = '1px solid purple'/>  </td> 
                     <td>${ele.category}</td>  
                     <td>
                     <button type="button" class = "update-btn" onclick="updatePro(${ele.productId})"><i class="fa-solid fa-pen-to-square"></i></button>

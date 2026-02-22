@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UrbanBags | Wishlist</title>
+    <title>UrbanBags | privacy Policy</title>
     <link rel="icon" href="./image/icon2.png" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/media.css" />
@@ -33,9 +33,8 @@
         </div>
         <div class="icons">
           <i class="fa-solid fa-bars" onclick="btnClick()"></i>
-          <!-- <a href="./index.html"><i class="fa-solid fa-user"></i></a> -->
           <a href="./wishlist.html"><i class="fa-solid fa-heart"></i></a>
-          <a href="./cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+          <a href="./cart.html" class="cart-btn"><i class="fa-solid fa-cart-shopping"></i></a>
           <a href="#" onclick="logOut()"
             ><i class="fa-solid fa-right-from-bracket"></i
           ></a>
@@ -43,7 +42,6 @@
         </div>
       </div>
 
-      
       <!-- navigation bar for media query -->
       <div class="bar-nav">
         <ul>
@@ -65,8 +63,53 @@
       </div>
     </header>
 
+    <!-- Privacy Policy Section -->
+    <section class="policy-page">
+      <div class="policy-container">
+        <h2 class="policy-title">Privacy Policy</h2>
+
+        <p>
+          At <strong>UrbanBags</strong>, we value your privacy and are committed
+          to protecting your personal information. This Privacy Policy explains
+          how we collect, use, and safeguard your data when you use our website.
+        </p>
+
+        <h3>1. Information We Collect</h3>
+        <p>
+          We may collect personal details such as your name, email address,
+          contact number, and shipping information when you place an order or
+          contact us.
+        </p>
+
+        <h3>2. How We Use Your Information</h3>
+        <p>
+          Your information is used to process orders, improve our services,
+          respond to inquiries, and provide updates about new products and
+          offers.
+        </p>
+
+        <h3>3. Data Protection</h3>
+        <p>
+          We implement appropriate security measures to protect your personal
+          information from unauthorized access, misuse, or disclosure.
+        </p>
+
+        <h3>4. Cookies</h3>
+        <p>
+          Our website may use cookies to enhance user experience and analyze
+          website traffic. You can disable cookies in your browser settings.
+        </p>
+
+        <h3>5. Third-Party Services</h3>
+        <p>
+          We do not sell or trade your personal information. However, trusted
+          third-party services may assist in payment processing or delivery.
+        </p>
+      </div>
+    </section>
+
     <!------- footer ------->
-    <!-- <footer>
+    <footer>
       <div class="upper-footer">
         <div class="footer-brand">
           <h4 class="footer-title">UrbanBags</h4>
@@ -114,8 +157,7 @@
         <div class="footer-support">
           <h4 class="footer-title">Support</h4>
           <ul>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="./policy.html">Privacy Policy</a></li>
             <li><a href="./contact.html"> Email: support@UrbanBags.com</a></li>
             <li>Phone: +91 9876543210</li>
           </ul>
@@ -127,8 +169,12 @@
           © 2026 <a href="" class="rights">UrbanBags</a>. All rights reserved.
         </p>
       </div>
-    </footer> -->
+    </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/script.js"></script>
+    <script src="js/lgout.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/prod.js"></script>
   </body>
 </html>

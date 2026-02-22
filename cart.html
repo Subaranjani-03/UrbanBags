@@ -14,7 +14,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-  </head>
+    </head>
   <body>
     <!--------- navigation --------->
     <header>
@@ -32,13 +32,16 @@
           </ul>
         </div>
         <div class="icons">
-            <i class="fa-solid fa-bars" onclick="btnClick()"></i>
-            <!-- <a href="./index.html"><i class="fa-solid fa-user"></i></a> -->
-            <a href="./wishlist.html"><i class="fa-solid fa-heart"></i></a>
-            <a href="./cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
-            <a href="#" onclick="logOut()"><i class="fa-solid fa-right-from-bracket"></i></a>
-            <span id="count">0</span>
-          </div>
+          <i class="fa-solid fa-bars" onclick="btnClick()"></i>
+          <a href="#"><i class="fa-solid fa-heart"></i></a>
+          <a href="./cart.html" class="cart-btn"
+            ><i class="fa-solid fa-cart-shopping"></i
+          ></a>
+          <a href="#" onclick="logOut()"
+            ><i class="fa-solid fa-right-from-bracket"></i
+          ></a>
+          <span id="count"></span>
+        </div>
       </div>
       <!-- navigation bar for media query -->
       <div class="bar-nav">
@@ -50,7 +53,9 @@
             <i class="fa-solid fa-circle-info"></i>
             <a href="./about.html">About</a>
           </li>
-          <li><i class="fa-solid fa-shop"></i> <a href="./shop.html">Shop</a></li>
+          <li>
+            <i class="fa-solid fa-shop"></i> <a href="./shop.html">Shop</a>
+          </li>
           <li>
             <i class="fa-solid fa-phone"></i>
             <a href="./contact.html">Contact</a>
@@ -59,8 +64,33 @@
       </div>
     </header>
 
+    <div class="cart-page">
+      <div class="cart-left">
+        <table class="cart-table">
+          <thead>
+            <tr>
+              <th>Product Details</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th>Total</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="cartContainer"></tbody>
+        </table>
+      </div>
+
+      <div class="cart-right">
+        <h3>Order Summary</h3>
+        <p>Subtotal: Rs<span id="subtotal">0.00</span></p>
+        <p>Delivery: Rs<span id="delivery">0.00</span></p>
+        <p>Total: Rs<span id="total">0.00</span></p>
+        <button class="checkout-btn">Check Out</button>
+      </div>
+    </div>
+
     <!------- footer ------->
-    <!-- <footer>
+    <footer>
       <div class="upper-footer">
         <div class="footer-brand">
           <h4 class="footer-title">UrbanBags</h4>
@@ -108,8 +138,7 @@
         <div class="footer-support">
           <h4 class="footer-title">Support</h4>
           <ul>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="./policy.html">Privacy Policy</a></li>
             <li><a href="./contact.html"> Email: support@UrbanBags.com</a></li>
             <li>Phone: +91 9876543210</li>
           </ul>
@@ -121,8 +150,13 @@
           © 2026 <a href="" class="rights">UrbanBags</a>. All rights reserved.
         </p>
       </div>
-    </footer> -->
+    </footer>
 
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/script.js"></script>
+    <script src="js/lgout.js"></script>
+    <script src="js/prod.js"></script>
+    <script src="js/cart.js"></script>
   </body>
 </html>

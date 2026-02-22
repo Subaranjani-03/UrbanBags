@@ -18,7 +18,6 @@
     "aside main"
     "aside footer";
   background-color: #f0f2f5;
-  /* background-color: #f4f6f9; */
 }
 .container header {
   /* border: 1px solid blue; */
@@ -52,59 +51,18 @@
   gap: 20px;
   padding: 10px;
 }
-.container header .header-right .header-timer{
+.container header .header-right .header-timer {
   /* border: 1px solid red; */
   font-size: 1rem;
 }
-.container header .header-right .fa-user{
+.container header .header-right .fa-user {
   transition: 0.4s;
   position: relative;
   color: purple;
 }
-.container header .header-right .fa-user:hover{
+.container header .header-right .fa-user:hover {
   color: black;
 }
-/* .container header .header-right .fa-user,
-.container header .header-right .fa-magnifying-glass,
-.container header .header-right .fa-bell,
-.container header .header-right .fa-comments,
-.container header .header-right .fa-maximize {
-  transition: 0.4s;
-  position: relative;
-} */
-/* .container header .header-right .fa-user:hover,
-.container header .header-right .fa-magnifying-glass:hover,
-.container header .header-right .fa-bell:hover,
-.container header .header-right .fa-comments:hover,
-.container header .header-right .fa-maximize:hover {
-  color: black;
-} */
-/* .container header .header-right .notify1 {
-  background-color: blue;
-  border-radius: 20px;
-  width: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 8px;
-  right: 72px;
-  font-size: 0.6rem;
-  color: white;
-} */
-/* .container header .header-right .notify2 {
-  background-color: rgb(243, 44, 44);
-  border-radius: 20px;
-  width: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 8px;
-  right: 128px;
-  font-size: 0.6rem;
-  color: white;
-} */
 
 .container aside {
   /* border: 1px solid blue; */
@@ -172,7 +130,7 @@ aside .profile-icons {
   color: beige;
   transition: 0.8s;
 }
-aside .profile-icons a{
+aside .profile-icons a {
   color: white;
   font-size: 1.4rem;
   text-decoration: none;
@@ -299,7 +257,7 @@ footer .cpy-right {
 .main-card .main-sub-card:hover .dash-card3 {
   background-color: rgb(0, 0, 0, 0.2);
 }
-.main-card .main-sub-card .dash-card3 .view-detail{
+.main-card .main-sub-card .dash-card3 .view-detail {
   text-decoration: none;
   color: white;
 }
@@ -318,16 +276,10 @@ footer .cpy-right {
 
 /* -------------product page---------- */
 .product-wrapper {
-  /* border: 1px solid; */
-  /* height: auto;
-  display: grid;
-  place-items: center;
-  gap: 60px;
-  padding-top: 10px; */
   display: flex;
   flex-direction: column;
-  align-items: center; 
-  gap: 50px;  
+  align-items: center;
+  gap: 50px;
   padding: 30px 0 20px 0;
 }
 .product-wrapper .form-box {
@@ -340,10 +292,6 @@ footer .cpy-right {
   border-radius: 10px;
   padding-bottom: 15px;
   background-color: rgb(255, 255, 255);
-  /* margin-bottom: 80px; */
-  /* margin-top: 10px; */
-  /* background: url(../img/5_asfasw112.jpg); */
-  /* background-size: cover; */
 }
 .product-wrapper .form-box form {
   /* border: 1px solid red; */
@@ -373,7 +321,8 @@ footer .cpy-right {
   font-size: 1rem;
   font-weight: 500;
 }
-.product-wrapper .form-box form .form-input input {
+.product-wrapper .form-box form .form-input input,
+.product-wrapper .form-box form .form-input select {
   padding: 8px;
   width: 400px;
   font-weight: 500;
@@ -402,7 +351,6 @@ footer .cpy-right {
 /* product table */
 
 .container .product-wrapper .prod-table {
-  /* margin-top: 20px; */
   border-collapse: collapse;
   border: 1px solid rgb(234, 227, 227);
   background-color: white;
@@ -419,7 +367,6 @@ footer .cpy-right {
   font-weight: 500;
 }
 .container .product-wrapper .prod-table th {
-  /* background-color: #e4e6eb; */
   background-color: #333940;
   color: white;
 }
@@ -427,7 +374,6 @@ footer .cpy-right {
   transition: 0.4s;
 }
 .container .product-wrapper .prod-table tbody tr:hover {
-  /* background-color: rgb(241, 238, 238); */
   background-color: #f3f4f6;
 }
 
@@ -456,18 +402,11 @@ footer .cpy-right {
   transform: translateY(2px);
 }
 
-
-
 /* -------------registration page---------- */
 .container .register-wrapper {
-  /* border: 1px solid; */
-  /* height: auto;
-  display: grid;
-  place-items: center; */
-  /* gap: 50px; */
   display: flex;
   flex-direction: column;
-  align-items: center;   
+  align-items: center;
   gap: 50px;
   padding: 30px 0 20px 0;
 }
@@ -475,9 +414,7 @@ footer .cpy-right {
   font-weight: 600;
 }
 .container .register-wrapper .reg-table {
-  /* margin-top: 20px; */
   border-collapse: collapse;
-  /* border: 1px solid; */
   background-color: white;
   /* width: 900px; */
   border-radius: 5px;
@@ -508,16 +445,11 @@ footer .cpy-right {
 /* -------------category page---------- */
 .category-wrapper {
   /* border: 1px solid; */
-  /* height: auto;
-  display: grid;
-  gap: 50px;
-  place-items: center; */
   display: flex;
   flex-direction: column;
-  align-items: center;  
-  gap: 50px; 
+  align-items: center;
+  gap: 50px;
   padding: 30px 0 20px 0;
-
 }
 .category-wrapper .cat-box {
   border: 2px solid purple;
@@ -527,14 +459,10 @@ footer .cpy-right {
   flex-direction: column;
   align-items: center;
   border-radius: 10px;
-  /* padding-bottom: 15px; */
-  /* margin-top: 10px; */
   background-color: rgb(255, 255, 255);
-  /* margin-bottom: 80px; */
 }
 .category-wrapper .cat-box form {
   /* border: 1px solid red; */
-  /* height: 300px; */
   width: auto;
   display: flex;
   flex-direction: column;
@@ -586,11 +514,9 @@ footer .cpy-right {
 /* category table */
 
 .container .category-wrapper .cat-table {
-  /* margin-top: 50px; */
   border-collapse: collapse;
   border: 1px solid rgb(234, 227, 227);
   background-color: white;
-  /* width: 500px; */
   border-radius: 5px;
   overflow: hidden;
 }
@@ -603,7 +529,6 @@ footer .cpy-right {
   font-weight: 500;
 }
 .container .category-wrapper .cat-table th {
-  /* background-color: #e4e6eb; */
   background-color: #333940;
   color: white;
 }
@@ -611,26 +536,21 @@ footer .cpy-right {
   transition: 0.4s;
 }
 .container .category-wrapper .cat-table tbody tr:hover {
-  /* background-color: rgb(241, 238, 238); */
   background-color: #f3f4f6;
 }
 
-
-
-
 /* ------- Sidebar Toggle------- */
-
 
 .container {
   grid-template-columns: 270px auto;
-  transition: .4s;
+  transition: 0.4s;
 }
 
 .container.hide-sidebar {
   grid-template-columns: 0px auto;
 }
 aside {
-  transition: .4s;
+  transition: 0.4s;
 }
 
 .container.hide-sidebar aside {

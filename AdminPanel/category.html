@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -23,18 +23,12 @@
         </div>
         <div class="header-right">
           <div class="header-timer">
-            <span id="hr">00 :</span> <span id="min">00 :</span> <span id="sec">00</span> <span id="ampm">AM</span>
+            <span id="hr">00 :</span> <span id="min">00 :</span>
+            <span id="sec">00</span> <span id="ampm">AM</span>
           </div>
-          <a href="../AdminPanel/admin-login.html"><i class="fa-solid fa-user"></i></a>
-          <!-- <i class="fa-solid fa-magnifying-glass"></i>
-          <i class="fa-solid fa-bell"></i>
-          <span class="notify1">5</span>
-          <i class="fa-solid fa-comments"></i>
-          <span class="notify2">2</span>
-          <i class="fa-solid fa-maximize"></i> -->
+          <a href="#"><i class="fa-solid fa-user"></i></a>
         </div>
       </header>
-
 
       <aside>
         <div class="profile">
@@ -46,41 +40,55 @@
         <div class="nav-links">
           <div class="nav-sub">
             <i class="fa-solid fa-house"></i>
-            <a href="../AdminPanel/dashboard.html" class="nav-sub-name">Dashboard</a>
+            <a href="../AdminPanel/dashboard.html" class="nav-sub-name"
+              >Dashboard</a
+            >
           </div>
           <div class="nav-sub">
             <i class="fa-solid fa-list"></i>
-            <a href="../AdminPanel/category.html" class="nav-sub-name">Category</a>
+            <a href="../AdminPanel/category.html" class="nav-sub-name"
+              >Category</a
+            >
           </div>
           <div class="nav-sub">
             <i class="fa-solid fa-cart-shopping"></i>
-            <a href="../AdminPanel/product.html" class="nav-sub-name">Products</a>
+            <a href="../AdminPanel/product.html" class="nav-sub-name"
+              >Products</a
+            >
           </div>
           <div class="nav-sub">
             <i class="fa-regular fa-address-card"></i>
-            <a href="../AdminPanel/registration.html" class="nav-sub-name">Customers</a>
+            <a href="../AdminPanel/registration.html" class="nav-sub-name"
+              >Customers</a
+            >
           </div>
           <div class="nav-sub">
             <i class="fa-solid fa-right-from-bracket"></i>
             <a href="#" class="nav-sub-name" onclick="logOut()">Logout</a>
           </div>
         </div>
-         <div class="profile-icons">
-          <a href="https://www.whatsapp.com/" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-          <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://x.com/" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+        <div class="profile-icons">
+          <a href="https://www.whatsapp.com/" target="_blank"
+            ><i class="fa-brands fa-whatsapp"></i
+          ></a>
+          <a href="https://www.facebook.com/" target="_blank"
+            ><i class="fa-brands fa-facebook-f"></i
+          ></a>
+          <a href="https://www.instagram.com/" target="_blank"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a href="https://x.com/" target="_blank"
+            ><i class="fa-brands fa-x-twitter"></i
+          ></a>
         </div>
       </aside>
 
-      <!-- <main class="wrapper"> -->
-       <main class="wrapper category-wrapper">
-
+      <main class="wrapper category-wrapper">
         <div class="cat-box">
           <form action="">
             <h2>Category</h2>
             <div class="cat-card-signup">
-              <input type="hidden" id="productId">
+              <input type="hidden" id="productId" />
               <div class="cat-input">
                 <label for="category">Category Name</label>
                 <input type="text" id="category" placeholder="Enter Category" />
@@ -88,18 +96,23 @@
               </div>
               <div class="cat-input">
                 <label for="categoryImg">Image URL</label>
-                <input type="url" id="categoryImg" placeholder="Enter Image URL" />
+                <input
+                  type="url"
+                  id="categoryImg"
+                  placeholder="Enter Image URL"
+                />
                 <span id="urlError" class="error"></span>
               </div>
-
             </div>
-            <button type="submit" id="submitbtn">Register</button>
-            <button type="submit" id="updatebtn" style="display: none;">Update</button>
+            <button type="submit" id="submitbtn">Save</button>
+            <button type="submit" id="updatebtn" style="display: none">
+              Update
+            </button>
           </form>
         </div>
-        
+
         <!-- table -->
-         <table class="cat-table">
+        <table class="cat-table">
           <thead>
             <tr>
               <th>SNo</th>
@@ -107,19 +120,9 @@
               <th>Image</th>
               <th>Category</th>
               <th>Action</th>
-              
             </tr>
-            </thead>
-            <tbody id="catTable">
-                <tr>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                </tr>
-            </tbody>
-          
+          </thead>
+          <tbody id="catTable"></tbody>
         </table>
       </main>
 
@@ -131,11 +134,10 @@
       </footer>
     </div>
 
-    
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../AdminPanel/script/category.js"></script>
     <script src="../AdminPanel/script/timer.js"></script>
     <script src="../AdminPanel/script/logout.js"></script>
-     <script src="../AdminPanel/script/toggle.js"></script>
+    <script src="../AdminPanel/script/toggle.js"></script>
   </body>
 </html>

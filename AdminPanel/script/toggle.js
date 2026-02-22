@@ -4,6 +4,4 @@ const container = document.querySelector(".container");
 menuToggle.addEventListener("click", function () {
   container.classList.toggle("hide-sidebar");
 });
-// menuToggle.addEventListener("click", function () {
-//   container.classList.toggle("show-sidebar");
-// });
+

@@ -27,12 +27,21 @@ let signupForm = () => {
   let cnfrmpassErr = document.getElementById("cnfrmpassErr");
 
   let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  const nameRegex = /^[A-Za-z\s]+$/;
 
   //error validations
   let isCheck = true;
 
   if (uname.value === "") {
     unameErr.innerText = "Please fill out this field !";
+    uname.style.border = "2px solid red";
+    isCheck = false;
+  } else if (!nameRegex.test(uname.value)) {
+    unameErr.innerText = "Should contain only alphabets!";
+    uname.style.border = "2px solid red";
+    isCheck = false;
+  } else if (uname.value.length < 3) {
+    unameErr.innerText = "Must be at least 3 letters!";
     uname.style.border = "2px solid red";
     isCheck = false;
   } else {
@@ -57,8 +66,8 @@ let signupForm = () => {
     phnumErr.innerText = "Please fill out this field !";
     phnum.style.border = "2px solid red";
     isCheck = false;
-  } else if (!/^[6-9]\d{9}$/.test(phnum.value)) {
-    phnumErr.innerText = "Enter valid 10 digit phone number";
+  } else if (!/^[6789]\d{9}$/.test(phnum.value)) {
+    phnumErr.innerText = "Must be 10 digits and start with 6, 7, 8, or 9!";
     phnum.style.border = "2px solid red";
     isCheck = false;
   } else {

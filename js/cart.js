@@ -1,13 +1,11 @@
 let cartContainer = document.getElementById("cartContainer");
 
 const renderCart = () => {
-
   let cartList = JSON.parse(localStorage.getItem("cartList")) || [];
 
   if (!cartContainer) return;
 
   if (cartList.length === 0) {
-
     cartContainer.innerHTML = `
       <tr>
         <td colspan="5" style="text-align:center; padding:30px;">
@@ -23,9 +21,10 @@ const renderCart = () => {
     Swal.fire({
       icon: "info",
       title: "Cart is Empty",
-      text: "Please add products to cart"
+      text: "Please add products to cart",
     });
 
+    updateCartCount();
     return;
   }
 
@@ -33,7 +32,6 @@ const renderCart = () => {
   let data = "";
 
   cartList.forEach((ele, index) => {
-
     let price = Number(ele.price);
     let offer = Number(ele.offer);
 
@@ -72,13 +70,17 @@ const renderCart = () => {
 
   cartContainer.innerHTML = data;
 
-  let delivery = subtotal > 0 ? 5.00 : 0.00;
+  let delivery = subtotal > 0 ? 5.0 : 0.0;
 
-  document.getElementById("subtotal").innerText = Math.round(subtotal)+'.00';
-  document.getElementById("delivery").innerText = Math.round(delivery)+'.00';
-  document.getElementById("total").innerText = Math.round(subtotal + delivery)+'.00';
+  document.getElementById("subtotal").innerText =
+    "Rs " + Math.round(subtotal) + ".00";
+  document.getElementById("delivery").innerText =
+    "Rs " + Math.round(delivery) + ".00";
+  document.getElementById("total").innerText =
+    "Rs " + Math.round(subtotal + delivery) + ".00";
+
+  updateCartCount();
 };
-
 
 // const changeQty = (index, change) => {
 
@@ -95,14 +97,13 @@ const renderCart = () => {
 // };
 
 const changeQty = (index, change) => {
-
   let cartList = JSON.parse(localStorage.getItem("cartList")) || [];
   let prodList = JSON.parse(localStorage.getItem("prodList")) || [];
 
   let item = cartList[index];
 
   // 🔹 Find stock from admin list
-  let productData = prodList.find(ele => ele.productId == item.productId);
+  let productData = prodList.find((ele) => ele.productId == item.productId);
 
   let stock;
 
@@ -115,16 +116,14 @@ const changeQty = (index, change) => {
 
   // If increasing quantity
   if (change === 1) {
-
     if (item.quantity + 1 > stock) {
       Swal.fire({
         icon: "error",
         title: "Insufficient Stock!",
-        text: `Only ${stock} item(s) available`
+        text: `Only ${stock} item(s) available`,
       });
       return;
     }
-
   }
 
   item.quantity += change;
@@ -138,28 +137,40 @@ const changeQty = (index, change) => {
 };
 
 const removeItem = (index) => {
+  Swal.fire({
+    title: "Are you sure?",
+    text: "This item will be removed from cart!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#d33",
+    cancelButtonColor: "#3085d6",
+    confirmButtonText: "Yes, remove it!",
+    cancelButtonText: "Cancel",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      let cartList = JSON.parse(localStorage.getItem("cartList")) || [];
 
-  let cartList = JSON.parse(localStorage.getItem("cartList")) || [];
+      cartList.splice(index, 1);
 
-  cartList.splice(index, 1);
+      localStorage.setItem("cartList", JSON.stringify(cartList));
+      renderCart();
 
-  localStorage.setItem("cartList", JSON.stringify(cartList));
-  renderCart();
+      Swal.fire("Deleted!", "Item has been removed from cart.", "success");
+    }
+  });
 };
 
 let checkoutBtn = document.querySelector(".checkout-btn");
 
 if (checkoutBtn) {
-
   checkoutBtn.addEventListener("click", () => {
-
     let cartList = JSON.parse(localStorage.getItem("cartList")) || [];
 
     if (cartList.length === 0) {
       Swal.fire({
         icon: "warning",
         title: "Cart is Empty",
-        text: "Add products before checkout"
+        text: "Add products before checkout",
       });
       return;
     }
@@ -181,12 +192,23 @@ if (checkoutBtn) {
     }).then(() => {
       localStorage.removeItem("cartList");
       renderCart();
+      updateCartCount();
     });
-
   });
-
 }
 
 renderCart();
 
+function updateCartCount() {
+  let cartList = JSON.parse(localStorage.getItem("cartList")) || [];
+  let count = document.getElementById("count");
 
+  if (count) {
+    if (cartList.length > 0) {
+      count.innerText = cartList.length;
+      count.style.display = "block";
+    } else {
+      count.style.display = "none";
+    }
+  }
+}

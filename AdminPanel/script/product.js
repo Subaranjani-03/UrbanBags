@@ -47,8 +47,12 @@ let validateForm = () => {
     prodError.innerText = "Please fill out this field !";
     prodName.style.border = "2px solid red";
     isCheck = false;
+  } else if (!/^[A-Za-z\s]+$/.test(prodName.value)) {
+    prodError.innerText = "Must contain only alphabets!";
+    prodName.style.border = "2px solid red";
+    isCheck = false;
   } else if (prodName.value.length < 3) {
-    prodError.innerText = "Product name must be at least 3 letters!";
+    prodError.innerText = "Must be at least 3 letters!";
     prodName.style.border = "2px solid red";
     isCheck = false;
   } else {
@@ -72,7 +76,7 @@ let validateForm = () => {
     price.style.border = "2px solid red";
     isCheck = false;
   } else if (Number(price.value) <= 0) {
-    priceError.innerText = "Invalid Price!";
+    priceError.innerText = "Negative Value not Allowed!";
     price.style.border = "2px solid red";
     isCheck = false;
   } else {
@@ -86,7 +90,7 @@ let validateForm = () => {
     stock.style.border = "2px solid red";
     isCheck = false;
   } else if (Number(stock.value) <= 0) {
-    stockError.innerText = "Invalid Stock!";
+    stockError.innerText = "Negative Value not Allowed!";
     stock.style.border = "2px solid red";
     isCheck = false;
   } else {
@@ -100,7 +104,7 @@ let validateForm = () => {
     offer.style.border = "2px solid red";
     isCheck = false;
   } else if (Number(offer.value) < 0) {
-    offerError.innerText = "Invalid Offer!";
+    offerError.innerText = "Negative Value not Allowed!";
     offer.style.border = "2px solid red";
     isCheck = false;
   } else {
@@ -163,6 +167,8 @@ let regForm = () => {
   });
 
   loadData();
+
+  document.querySelector("form").reset();
 };
 
 let loadData = () => {
@@ -303,13 +309,9 @@ let updateData = () => {
 
   loadData();
 
+  let form = document.querySelector("form");
+  form.reset();
   document.getElementById("productId").value = "";
-  document.getElementById("img-url").value = "";
-  document.getElementById("prod-name").value = "";
-  document.getElementById("category").value = "";
-  document.getElementById("price").value = "";
-  document.getElementById("stock").value = "";
-  document.getElementById("offer").value = "";
 
   document.querySelector("#updatebtn").style.display = "none";
   document.querySelector("#submitbtn").style.display = "block";

@@ -32,6 +32,10 @@ let validateCat = () => {
     categoryError.innerText = "Category must be atleast 3 letters!";
     category.style.border = "2px solid red";
     isCheck = false;
+  } else if (!/^[A-Za-z\s]+$/.test(category.value)) {
+    categoryError.innerText = "Category must contain only alphabets!";
+    category.style.border = "2px solid red";
+    isCheck = false;
   } else {
     categoryError.innerText = "";
     category.style.border = "";
@@ -90,8 +94,7 @@ let categoryTable = () => {
 
   loadData();
 
-  document.getElementById("categoryImg").value = "";
-  document.getElementById("category").value = "";
+  document.querySelector("form").reset();
 };
 
 let loadData = () => {
@@ -204,9 +207,8 @@ let updateData = () => {
 
   loadData();
 
+  document.querySelector("form").reset();
   document.getElementById("productId").value = "";
-  document.getElementById("category").value = "";
-  document.getElementById("categoryImg").value = "";
 
   document.querySelector("#updatebtn").style.display = "none";
   document.querySelector("#submitbtn").style.display = "block";

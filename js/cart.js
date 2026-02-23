@@ -58,9 +58,8 @@ const renderCart = () => {
           <button onclick="changeQty(${index}, 1)">+</button>
         </td>
 
-        <td>Rs ${finalPrice.toFixed(2)}</td>
-
-        <td>Rs ${totalItemPrice.toFixed(2)}</td>
+       <td>Rs ${Math.round(finalPrice)}</td>
+        <td>Rs ${Math.round(totalItemPrice)}</td>
 
         <td>
           <i class="fa-solid fa-trash delete-btn"
@@ -75,9 +74,9 @@ const renderCart = () => {
 
   let delivery = subtotal > 0 ? 5.00 : 0.00;
 
-  document.getElementById("subtotal").innerText = subtotal.toFixed(2);
-  document.getElementById("delivery").innerText = delivery.toFixed(2);
-  document.getElementById("total").innerText = (subtotal + delivery).toFixed(2);
+  document.getElementById("subtotal").innerText = Math.round(subtotal)+'.00';
+  document.getElementById("delivery").innerText = Math.round(delivery)+'.00';
+  document.getElementById("total").innerText = Math.round(subtotal + delivery)+'.00';
 };
 
 

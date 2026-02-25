@@ -156,7 +156,7 @@ document.addEventListener("click", function (e) {
 
     let productId = btn.dataset.id;
 
-    // 🔹 Check if product exists in admin list
+    //  Check if product exists in admin list
     let productData = prodList.find((ele) => ele.productId == productId);
 
     let stock;
@@ -201,31 +201,13 @@ document.addEventListener("click", function (e) {
   }
 });
 
-// function updateCartCount() {
-
-//   let cartList = JSON.parse(localStorage.getItem("cartList")) || [];
-//   let count = document.getElementById("count");
-
-//   let totalQty = 0;
-
-//   cartList.forEach(ele => {
-//     totalQty += ele.quantity;
-//   });
-
-//   if (count) {
-//     count.innerText = totalQty;
-//   }
-// }
-
-// updateCartCount();
-
 function updateCartCount() {
   let cartList = JSON.parse(localStorage.getItem("cartList")) || [];
   let count = document.getElementById("count");
 
   if (count) {
     if (cartList.length > 0) {
-      count.innerText = cartList.length; // ✅ Only count products
+      count.innerText = cartList.length; // Only count products
       count.style.display = "block";
     } else {
       count.style.display = "none";

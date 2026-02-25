@@ -77,6 +77,10 @@
 
 /* -----------aside-profile----------- */
 
+aside .close-sidebar {
+  display: none;
+}
+
 aside .profile {
   /* border: 2px solid red; */
   height: auto;
@@ -96,7 +100,7 @@ aside .profile .profile-name {
 }
 aside .nav-links {
   /* border: 2px solid red; */
-  height: 400px;
+  height: 350px;
   display: flex;
   flex-direction: column;
   gap: 15px;

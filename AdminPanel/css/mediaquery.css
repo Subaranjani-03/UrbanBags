@@ -3,7 +3,6 @@
 /* -------tab view-------- */
 
 @media all and (max-width: 768px) {
-
   /* ------- Sidebar Toggle------- */
   .container {
     grid-template-columns: 0px auto;
@@ -17,10 +16,10 @@
     padding-top: 60px;
   }
   aside .nav-links {
-    margin-top: 60px;
+    margin-top: 80px;
   }
   aside .profile-icons {
-    margin-top: 210px;
+    margin-top: 250px;
   }
 
   .container.hide-sidebar {
@@ -118,7 +117,6 @@
 /* -------mobile view-------- */
 
 @media all and (max-width: 576px) {
-
   /* ------- Sidebar Toggle------- */
 
   .container {
@@ -146,12 +144,14 @@
   aside .nav-links {
     gap: 10px;
     height: auto;
+    /* border: 1px solid red; */
+    margin-top: 40px;
   }
   aside .nav-links .nav-sub {
     gap: 10px;
   }
   aside .profile-icons {
-    margin-top: 110px;
+    margin-top: 80px;
     padding: 10px;
   }
   /* Show sidebar */
@@ -268,5 +268,23 @@
   /* --------footer------ */
   .container footer {
     font-size: 0.8rem;
+  }
+
+  /* Close Icon */
+  aside .close-sidebar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px 20px 0 0;
+  }
+
+  aside .close-sidebar i {
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  aside .close-sidebar i:hover {
+    transform: rotate(90deg);
   }
 }

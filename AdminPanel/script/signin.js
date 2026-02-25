@@ -58,9 +58,6 @@ let loginForm = () => {
 
     if (validUser.length > 0) {
 
-      // localStorage.setItem("isLoggedIn", "true");
-      // localStorage.setItem("loggedUser", JSON.stringify(validUser[0]));
-
       Swal.fire({
         icon: "success",
         title: "Login Successful",

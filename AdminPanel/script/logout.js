@@ -10,10 +10,6 @@ let logOut = () => {
     cancelButtonText: "Cancel",
   }).then((result) => {
     if (result.isConfirmed) {
-      
-      //Remove login session
-      // localStorage.removeItem("isLoggedIn");
-      // localStorage.removeItem("loggedUser");
 
       Swal.fire({
         title: "Logging out...",

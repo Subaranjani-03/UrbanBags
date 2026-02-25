@@ -153,8 +153,6 @@ let loadData = () => {
 
   let regList = JSON.parse(localStorage.getItem("regList")) || [];
 
-  // console.log(regList)
-
   let tr = "";
 
   //using forEach()
@@ -169,8 +167,6 @@ let loadData = () => {
 
                 </tr>`;
   });
-
-  // console.log(tr)
 
   tbody.innerHTML = tr;
 };

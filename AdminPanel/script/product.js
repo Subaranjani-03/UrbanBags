@@ -230,9 +230,7 @@ loadCategories();
 //update product
 
 let updatePro = (productId) => {
-  // console.log(productId);
   let productList = JSON.parse(localStorage.getItem("prodList"));
-  // console.log(productList)
 
   let fpl = productList.filter((ele) => {
     if (ele.productId == productId) {
@@ -240,10 +238,7 @@ let updatePro = (productId) => {
     }
   });
 
-  // console.log(fpl);
   let [singleProduct] = fpl;
-
-  // console.log(singleProduct)
 
   document.getElementById("productId").value = singleProduct.productId;
   document.getElementById("img-url").value = singleProduct.imgUrl;

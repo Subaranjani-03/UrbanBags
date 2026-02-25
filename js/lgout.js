@@ -1,4 +1,4 @@
-function logOut(){
+function logOut() {
   Swal.fire({
     title: "Are you sure?",
     text: "You will be logged out of your account!",
@@ -10,12 +10,6 @@ function logOut(){
     cancelButtonText: "Cancel",
   }).then((result) => {
     if (result.isConfirmed) {
-
-      // Remove login session
-      // localStorage.removeItem("loggedUser");
-      // localStorage.removeItem("isLoggedIn");
-
-
       Swal.fire({
         title: "Logging out...",
         text: "Please wait",
@@ -31,4 +25,4 @@ function logOut(){
       }, 1000);
     }
   });
-};
+}

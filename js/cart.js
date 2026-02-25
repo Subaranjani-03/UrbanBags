@@ -56,8 +56,8 @@ const renderCart = () => {
           <button onclick="changeQty(${index}, 1)">+</button>
         </td>
 
-       <td>Rs ${Math.round(finalPrice)}</td>
-        <td>Rs ${Math.round(totalItemPrice)}</td>
+       <td>₹ ${Math.round(finalPrice)}</td>
+        <td>₹ ${Math.round(totalItemPrice)}</td>
 
         <td>
           <i class="fa-solid fa-trash delete-btn"
@@ -73,11 +73,11 @@ const renderCart = () => {
   let delivery = subtotal > 0 ? 5.0 : 0.0;
 
   document.getElementById("subtotal").innerText =
-    "Rs " + Math.round(subtotal) + ".00";
+    "₹ " + Math.round(subtotal) + ".00";
   document.getElementById("delivery").innerText =
-    "Rs " + Math.round(delivery) + ".00";
+    "₹ " + Math.round(delivery) + ".00";
   document.getElementById("total").innerText =
-    "Rs " + Math.round(subtotal + delivery) + ".00";
+    "₹ " + Math.round(subtotal + delivery) + ".00";
 
   updateCartCount();
 };
@@ -182,9 +182,9 @@ if (checkoutBtn) {
     Swal.fire({
       title: "Payment Done!",
       html: `
-        <p>Subtotal: Rs ${subtotal}</p>
-        <p>Delivery: Rs ${delivery}</p>
-        <p><b>Total Paid: Rs ${total}</b></p>
+        <p>Subtotal: ₹ ${subtotal}</p>
+        <p>Delivery: ₹ ${delivery}</p>
+        <p><b>Total Paid: ${total}</b></p>
         <p>Thank you for shopping with UrbanBags!</p>
       `,
       icon: "success",

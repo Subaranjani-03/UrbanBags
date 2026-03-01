@@ -102,7 +102,7 @@ const changeQty = (index, change) => {
 
   let item = cartList[index];
 
-  // 🔹 Find stock from admin list
+  // Find stock from admin list
   let productData = prodList.find((ele) => ele.productId == item.productId);
 
   let stock;

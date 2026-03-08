@@ -90,62 +90,7 @@ let loadProducts = () => {
 
 loadProducts();
 
-// add to cart function
-// document.addEventListener("click", function (e) {
 
-//   // Check if clicked on any add-cart button
-//   if (e.target.closest(".add-cart")) {
-
-//     let btn = e.target.closest(".add-cart");
-
-//     // Get cart from localStorage
-//     let cartList = JSON.parse(localStorage.getItem("cartList")) || [];
-
-//     let productId = btn.dataset.id;
-
-//     // Check if product already exists in cart
-//     let existing = cartList.find(ele => ele.productId == productId);
-
-//     if (existing) {
-//       // Show warning if already added
-//       // Swal.fire({
-//       //   icon: "warning",
-//       //   title: "Already in Cart!",
-//       //   text: "This product is already added.",
-//       //   timer: 1500,
-//       //   showConfirmButton: false
-//       // });
-//       showToast("Already in Cart", "warning");
-//       return; // Stop execution
-//     }
-
-//     // If not in cart → add
-//     let product = {
-//       productId: btn.dataset.id,
-//       prodName: btn.dataset.name,
-//       price: btn.dataset.price,
-//       offer: btn.dataset.offer,
-//       imgUrl: btn.dataset.img,
-//       quantity: 1
-//     };
-
-//     cartList.push(product);
-
-//     // Save updated cart back to localStorage
-//     localStorage.setItem("cartList", JSON.stringify(cartList));
-
-//     // Update cart count badge
-//     updateCartCount();
-
-//     // Swal.fire({
-//     //   icon: "success",
-//     //   title: "Added to Cart!",
-//     //   timer: 1000,
-//     //   showConfirmButton: false
-//     // });
-//     showToast("Item Added to Cart", "success");
-//   }
-// });
 
 document.addEventListener("click", function (e) {
   if (e.target.closest(".add-cart")) {
@@ -177,11 +122,21 @@ document.addEventListener("click", function (e) {
     let existing = cartList.find((ele) => ele.productId == productId);
 
     if (existing) {
-      showToast("Product already added to cart!", "warning");
+      if (existing.quantity + 1 > stock) {
+        showToast("No more stock available!", "error");
+        return;
+      }
+
+      existing.quantity += 1;
+
+      localStorage.setItem("cartList", JSON.stringify(cartList));
+
+      updateCartCount();
+      showToast("Quantity Updated", "success");
       return;
     }
 
-    // ✅ Add new product
+    //  Add new product
     let product = {
       productId: btn.dataset.id,
       prodName: btn.dataset.name,
@@ -206,8 +161,15 @@ function updateCartCount() {
   let count = document.getElementById("count");
 
   if (count) {
-    if (cartList.length > 0) {
-      count.innerText = cartList.length; // Only count products
+
+    let totalQty = 0;
+
+    cartList.forEach((item) => {
+      totalQty += item.quantity;
+    });
+
+    if (totalQty > 0) {
+      count.innerText = totalQty;
       count.style.display = "block";
     } else {
       count.style.display = "none";

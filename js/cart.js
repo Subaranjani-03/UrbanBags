@@ -82,20 +82,6 @@ const renderCart = () => {
   updateCartCount();
 };
 
-// const changeQty = (index, change) => {
-
-//   let cartList = JSON.parse(localStorage.getItem("cartList")) || [];
-
-//   cartList[index].quantity += change;
-
-//   if (cartList[index].quantity < 1) {
-//     cartList[index].quantity = 1;
-//   }
-
-//   localStorage.setItem("cartList", JSON.stringify(cartList));
-//   renderCart();
-// };
-
 const changeQty = (index, change) => {
   let cartList = JSON.parse(localStorage.getItem("cartList")) || [];
   let prodList = JSON.parse(localStorage.getItem("prodList")) || [];
@@ -134,6 +120,7 @@ const changeQty = (index, change) => {
 
   localStorage.setItem("cartList", JSON.stringify(cartList));
   renderCart();
+ 
 };
 
 const removeItem = (index) => {
@@ -154,6 +141,7 @@ const removeItem = (index) => {
 
       localStorage.setItem("cartList", JSON.stringify(cartList));
       renderCart();
+      updateCartCount();
 
       Swal.fire("Deleted!", "Item has been removed from cart.", "success");
     }
@@ -203,12 +191,19 @@ function updateCartCount() {
   let cartList = JSON.parse(localStorage.getItem("cartList")) || [];
   let count = document.getElementById("count");
 
-  if (count) {
-    if (cartList.length > 0) {
-      count.innerText = cartList.length;
-      count.style.display = "block";
-    } else {
-      count.style.display = "none";
-    }
+  if (!count) return;
+
+  let totalQty = 0;
+
+  cartList.forEach((item) => {
+    totalQty += Number(item.quantity);
+  });
+
+  if (totalQty > 0) {
+    count.innerText = totalQty;
+    count.style.display = "block";
+  } else {
+    count.style.display = "none";
   }
 }
+

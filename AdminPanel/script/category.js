@@ -16,10 +16,9 @@ submit_btn.addEventListener("submit", (e) => {
 
 //form validation function
 let validateCat = () => {
-  let imgUrl = document.getElementById("categoryImg");
+  
   let category = document.getElementById("category");
 
-  let urlError = document.getElementById("urlError");
   let categoryError = document.getElementById("categoryError");
 
   let isCheck = true;
@@ -41,15 +40,6 @@ let validateCat = () => {
     category.style.border = "";
   }
 
-  // Image
-  if (imgUrl.value === "") {
-    urlError.innerText = "Please fill out valid URL !";
-    imgUrl.style.border = "2px solid red";
-    isCheck = false;
-  } else {
-    urlError.innerText = "";
-    imgUrl.style.border = "";
-  }
   return isCheck;
 };
 
@@ -60,7 +50,6 @@ let categoryTable = () => {
 
   let catList = JSON.parse(localStorage.getItem("catList")) || [];
 
-  let imgUrl = document.getElementById("categoryImg");
   let categoryValue = document.getElementById("category").value.trim();
 
   let duplicate = catList.filter((ele) => {
@@ -77,7 +66,6 @@ let categoryTable = () => {
 
   let regData = {
     productId: Date.now(),
-    imgUrl: imgUrl.value,
     category: document.getElementById("category").value,
   };
 
@@ -103,7 +91,6 @@ let loadData = () => {
 
   //get array from local storage
   let catList = JSON.parse(localStorage.getItem("catList")) || [];
-  // console.log(catList)
 
   let tr = "";
   if (catList != null) {
@@ -112,7 +99,6 @@ let loadData = () => {
       tr += `<tr>
                     <td>${index + 1}</td>
                     <td>${ele.productId}</td>
-                    <td><img src="${ele.imgUrl}" alt="${ele.category}" width="80px" height="80px" border = '1px solid purple'/>  </td> 
                     <td>${ele.category}</td>  
                     <td>
                     <button type="button" class = "update-btn" onclick="updatePro(${ele.productId})"><i class="fa-solid fa-pen-to-square"></i></button>
@@ -149,7 +135,6 @@ let updatePro = (productId) => {
   // console.log(singleProduct)
 
   document.getElementById("productId").value = singleProduct.productId;
-  document.getElementById("categoryImg").value = singleProduct.imgUrl;
   document.getElementById("category").value = singleProduct.category;
 
   document.querySelector("#updatebtn").style.display = "block";
@@ -161,7 +146,6 @@ let updateData = () => {
 
   let pid = document.getElementById("productId").value;
 
-  let pimage = document.getElementById("categoryImg").value;
   let pcategory = document.getElementById("category").value;
 
   let pl = JSON.parse(localStorage.getItem("catList")) || [];
@@ -184,7 +168,6 @@ let updateData = () => {
 
   let productData = {
     productId: Number(pid),
-    imgUrl: pimage,
     category: pcategory,
   };
 

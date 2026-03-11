@@ -98,15 +98,6 @@
                 <input type="text" id="category" placeholder="Enter Category" />
                 <span id="categoryError" class="error"></span>
               </div>
-              <div class="cat-input">
-                <label for="categoryImg">Image URL</label>
-                <input
-                  type="url"
-                  id="categoryImg"
-                  placeholder="Enter Image URL"
-                />
-                <span id="urlError" class="error"></span>
-              </div>
             </div>
             <button type="submit" id="submitbtn">Save</button>
             <button type="submit" id="updatebtn" style="display: none">
@@ -120,8 +111,7 @@
           <thead>
             <tr>
               <th>SNo</th>
-              <th>Product Id</th>
-              <th>Image</th>
+              <th>Category Id</th>
               <th>Category</th>
               <th>Action</th>
             </tr>
@@ -132,8 +122,8 @@
 
       <footer>
         <p>
-          © 2026 <span class="cpy-right">Admin Panel</span>. All rights
-          reserved.
+          © <span id="year"></span> <span class="cpy-right">Admin Panel</span>.
+          All rights reserved.
         </p>
       </footer>
     </div>
@@ -143,5 +133,6 @@
     <script src="../AdminPanel/script/timer.js"></script>
     <script src="../AdminPanel/script/logout.js"></script>
     <script src="../AdminPanel/script/toggle.js"></script>
+    <script src="./script/footer.js"></script>
   </body>
 </html>

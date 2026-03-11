@@ -84,33 +84,8 @@ const renderCart = () => {
 
 const changeQty = (index, change) => {
   let cartList = JSON.parse(localStorage.getItem("cartList")) || [];
-  let prodList = JSON.parse(localStorage.getItem("prodList")) || [];
 
   let item = cartList[index];
-
-  // Find stock from admin list
-  let productData = prodList.find((ele) => ele.productId == item.productId);
-
-  let stock;
-
-  if (productData) {
-    stock = Number(productData.stock);
-  } else {
-    // For static HTML products
-    stock = Number(item.stock || 0);
-  }
-
-  // If increasing quantity
-  if (change === 1) {
-    if (item.quantity + 1 > stock) {
-      Swal.fire({
-        icon: "error",
-        title: "Insufficient Stock!",
-        text: `Only ${stock} item(s) available`,
-      });
-      return;
-    }
-  }
 
   item.quantity += change;
 
@@ -120,7 +95,6 @@ const changeQty = (index, change) => {
 
   localStorage.setItem("cartList", JSON.stringify(cartList));
   renderCart();
- 
 };
 
 const removeItem = (index) => {
@@ -170,8 +144,8 @@ if (checkoutBtn) {
     Swal.fire({
       title: "Payment Done!",
       html: `
-        <p>Subtotal: ₹ ${subtotal}</p>
-        <p>Delivery: ₹ ${delivery}</p>
+        <p>Subtotal: ${subtotal}</p>
+        <p>Delivery: ${delivery}</p>
         <p><b>Total Paid: ${total}</b></p>
         <p>Thank you for shopping with UrbanBags!</p>
       `,
@@ -206,4 +180,3 @@ function updateCartCount() {
     count.style.display = "none";
   }
 }
-

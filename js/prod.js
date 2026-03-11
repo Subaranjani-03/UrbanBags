@@ -97,36 +97,13 @@ document.addEventListener("click", function (e) {
     let btn = e.target.closest(".add-cart");
 
     let cartList = JSON.parse(localStorage.getItem("cartList")) || [];
-    let prodList = JSON.parse(localStorage.getItem("prodList")) || [];
 
     let productId = btn.dataset.id;
 
-    //  Check if product exists in admin list
-    let productData = prodList.find((ele) => ele.productId == productId);
-
-    let stock;
-
-    if (productData) {
-      // From admin panel
-      stock = Number(productData.stock);
-    } else {
-      // From static HTML
-      stock = Number(btn.dataset.stock);
-    }
-
-    if (!stock || stock <= 0) {
-      showToast("Out of Stock!", "error");
-      return;
-    }
-
     let existing = cartList.find((ele) => ele.productId == productId);
 
+    // If product already exists in cart
     if (existing) {
-      if (existing.quantity + 1 > stock) {
-        showToast("No more stock available!", "error");
-        return;
-      }
-
       existing.quantity += 1;
 
       localStorage.setItem("cartList", JSON.stringify(cartList));
@@ -136,14 +113,13 @@ document.addEventListener("click", function (e) {
       return;
     }
 
-    //  Add new product
+    // Add new product
     let product = {
       productId: btn.dataset.id,
       prodName: btn.dataset.name,
       price: btn.dataset.price,
       offer: btn.dataset.offer,
       imgUrl: btn.dataset.img,
-      stock: stock,
       quantity: 1,
     };
 
